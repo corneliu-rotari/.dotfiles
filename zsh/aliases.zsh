@@ -1,0 +1,5 @@
+alias update="sudo apt-get update && sudo apt-get upgrade -y && clear"
+alias ls="exa --icons"
+alias edit="vim ~/.dotfiles/"
+alias vim="nvim"
+alias gef="gdb"
