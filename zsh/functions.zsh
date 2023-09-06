@@ -25,3 +25,28 @@ function vcs {
     cd $1
   fi
 }
+
+function check_input()
+{
+  echo
+  read -p "$1 [Y/n] " user_input
+	if [ "$user_input" != "n" ] && [ "$user_input" != "N" ] && [ "$user_input" != "no" ] && [ "$user_input" != "No" ] 
+  then
+    return 0 
+  else
+    return 1
+  fi
+}
+
+function nvm_lts {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+  nvm install --lts
+  nvm use --lts
+  if check_input "Do you want to reinstall packages?"
+  then
+    echo "Reinstalling"
+  fi
+}
