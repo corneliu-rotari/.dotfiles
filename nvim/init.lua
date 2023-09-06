@@ -3,18 +3,6 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 40
 local autocmd = vim.api.nvim_create_autocmd
 
--- vim.g.clipboard = {
---   name = 'WslClipboard',
---   copy = {
---     ["+"] = 'clip.exe',
---     ["*"] = 'clip.exe',
---   },
---   paste =  {
---     ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---     ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---   },
---   cache_enabled = false,
--- }
 
 local function open_nvim_tree(data)
     local split_result = data.file:match("(.*/)(.*)")
@@ -40,3 +28,5 @@ local function open_nvim_tree(data)
 end
 
 autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+require "custom.clipboard"
