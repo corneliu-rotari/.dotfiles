@@ -19,6 +19,7 @@ conf_ln ()
     echo "[Created] Symbolic Link to $2"
   }
 
+  mkdir -p ~/.config   
   log "Links"
   # ZSH config
   ln_if "$DOT/zsh/init.zsh" ~/.zshrc
