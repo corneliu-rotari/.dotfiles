@@ -54,6 +54,7 @@ conf_nvm ()
 
 main ()
 {
+  install_dep
   conf_ln
   conf_nvm
 }
