@@ -1,9 +1,21 @@
 #!/bin/bash
-DOT="/home/cornel/.dotfiles"
+DOT="$HOME/.dotfiles"
 
 log ()
 {
   echo "====================[$1 Configuration]===================="
+}
+
+install_dep()
+{
+  log "Dependecy"
+  sudo apt-get update
+  sudo add-apt-repository ppa:git-core/ppa
+  sudo add-apt-repository ppa:openjdk-r/ppa
+
+  sudo apt-get update && sudo apt-get upgrade
+
+  sudo apt install -y zsh gdb binutils curl tmux gcc valgrind g++ make python3 python3-pip zip unzip python3-venv shellcheck openjdk-19-jdk openjdk-19-source
 }
 
 conf_ln ()

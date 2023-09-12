@@ -1,9 +1,8 @@
 #!/bin/bash
-cd ~
+cd
 mkdir -p ~/.config
 
 # install dependencies configuration
-echo "\n\n====[Update system and installing dependencies]====\n\n"
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install -y git zsh gdb binutils curl tmux gcc valgrind g++ make python3 python3-pip zip unzip
