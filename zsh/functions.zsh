@@ -29,8 +29,9 @@ function vcs {
 function check_input()
 {
   echo
-  read -p "$1 [Y/n] " user_input
-	if [ "$user_input" != "n" ] && [ "$user_input" != "N" ] && [ "$user_input" != "no" ] && [ "$user_input" != "No" ] 
+  echo -n "$1 [Y/n] "
+	read user_input 
+  if [ "$user_input" != "n" ] && [ "$user_input" != "N" ] && [ "$user_input" != "no" ] && [ "$user_input" != "No" ] 
   then
     return 0 
   else
