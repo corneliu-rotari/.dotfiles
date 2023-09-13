@@ -3,15 +3,19 @@ DOT="$HOME/.dotfiles"
 
 log ()
 {
+  clear
   echo "====================[$1 Configuration]===================="
 }
 
 i_cargo()
 {
+  log "Cargo"
   curl https://sh.rustup.rs -sSf | sh
-  . "$HOME/.cargo/env"
+  source "$HOME/.cargo/env"
   cargo install exa
   cargo install bob-nvim
+  bob install stable
+  bob use stable
 }
 
 i_dep()
@@ -70,6 +74,7 @@ main ()
   conf_ln
   conf_nvm
   i_cargo
+  source "$HOME/.zshrc"
 }
 
 main
