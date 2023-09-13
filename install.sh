@@ -74,7 +74,7 @@ main ()
   conf_ln
   conf_nvm
   i_cargo
-  source "$HOME/.zshrc"
+  zsh
 }
 
 main
