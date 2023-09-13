@@ -10,17 +10,21 @@ install_dep()
 {
   log "Dependecy"
   sudo apt-get update && sudo apt-get upgrade
-  sudo apt-get install software-properties-common
-  sudo add-apt-repository ppa:git-core/ppa
-  sudo add-apt-repository ppa:openjdk-r/ppa
+  # sudo add-apt-repository ppa:git-core/ppa
+  # sudo add-apt-repository ppa:openjdk-r/ppa
+  # sudo apt-get installl openjdk-19-jdk openjdk-19-source
 
-  sudo apt-get update && sudo apt-get upgrade
-
-  sudo apt install -y zsh gdb binutils curl tmux gcc valgrind g++ make python3 python3-pip zip unzip python3-venv shellcheck openjdk-19-jdk openjdk-19-source
+  sudo apt install -y zsh gdb binutils curl tmux gcc valgrind \
+                      g++ make python3 python3-pip zip unzip \
+                      python3-venv shellcheck  ripgrep \
+                      software-properties-common
+  chsh -s "$(which zsh)"
 }
 
 conf_ln ()
 {
+  log "Links"
+
   ln_if ()
   {
     if [ -e "$2" ] || [ -L "$2" ]; then
@@ -33,7 +37,6 @@ conf_ln ()
   }
 
   mkdir -p ~/.config   
-  log "Links"
   # ZSH config
   ln_if "$DOT/zsh/init.zsh" ~/.zshrc
   ln_if "$DOT/zsh/env.zsh" ~/.zshenv
