@@ -69,6 +69,7 @@ main ()
   i_dep
   conf_ln
   conf_nvm
+  i_cargo
 }
 
 main
