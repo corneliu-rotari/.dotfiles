@@ -6,7 +6,15 @@ log ()
   echo "====================[$1 Configuration]===================="
 }
 
-install_dep()
+i_cargo()
+{
+  curl https://sh.rustup.rs -sSf | sh
+  . "$HOME/.cargo/env"
+  cargo install exa
+  cargo install bob-nvim
+}
+
+i_dep()
 {
   log "Dependecy"
   sudo apt-get update && sudo apt-get upgrade
@@ -58,7 +66,7 @@ conf_nvm ()
 
 main ()
 {
-  install_dep
+  i_dep
   conf_ln
   conf_nvm
 }
