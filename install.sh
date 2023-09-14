@@ -7,6 +7,12 @@ log ()
   echo "====================[$1 Configuration]===================="
 }
 
+create_dirs()
+{
+  log "Directory"
+  mkdir -p ~/.config
+  mkdir -p "$DOT/tmux/plugins"
+}
 i_cargo()
 {
   log "Cargo"
@@ -48,7 +54,6 @@ conf_ln ()
     echo "[Created] Symbolic Link to $2"
   }
 
-  mkdir -p ~/.config   
   # ZSH config
   ln_if "$DOT/zsh/init.zsh" ~/.zshrc
   ln_if "$DOT/zsh/env.zsh" ~/.zshenv
@@ -72,6 +77,7 @@ conf_nvm ()
 main ()
 {
   i_dep
+  create_dirs
   conf_ln
   conf_nvm
   i_cargo

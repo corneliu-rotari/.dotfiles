@@ -1,6 +1,6 @@
-export DOTFILES="$HOME/.dotfiles"
-export ZSH_CONFIG="$DOTFILES/zsh"
-export ZSH="$DOTFILES/modules/oh-my-zsh"
+export DOT="$HOME/.dotfiles"
+export ZSH_CONFIG="$DOT/zsh"
+export ZSH="$DOT/modules/oh-my-zsh"
 export ZSH_CUSTOM="$ZSH_CONFIG/custom"
 
 ZSH_THEME="lambda"
