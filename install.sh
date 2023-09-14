@@ -59,6 +59,7 @@ conf_ln ()
   ln_if "$DOT/nvim" "$DOT/modules/nvim/lua/custom"
   ln_if "$DOT/i3" ~/.config/i3
   ln_if "$DOT/tmux" ~/.config/tmux
+  ln_if "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
 }
 
 conf_nvm ()
