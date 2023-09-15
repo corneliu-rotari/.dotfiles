@@ -6,7 +6,7 @@ alias clar="clear"
 alias clera="clear"
 alias clrea="clear"
 
-alias update="sudo apt-get update && sudo apt-get upgrade -y && clear"
+alias up="sudo apt-get update && sudo apt-get upgrade -y && clear"
 alias ls="exa --icons"
 alias edit="vim ~/.dotfiles/"
 alias vim="nvim"

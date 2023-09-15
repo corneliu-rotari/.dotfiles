@@ -51,3 +51,7 @@ function nvm_lts {
     echo "Reinstalling"
   fi
 }
+
+function scd {
+  ssh -t "$1" "cd /mnt/app/bin ; exec \$SHELL -l";
+}
