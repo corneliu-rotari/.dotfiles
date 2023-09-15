@@ -20,8 +20,6 @@ i_cargo()
   source "$HOME/.cargo/env"
   cargo install exa
   cargo install bob-nvim
-  bob install stable
-  bob use stable
 }
 
 i_dep()
@@ -81,7 +79,8 @@ main ()
   conf_ln
   conf_nvm
   i_cargo
-  zsh
+  clear
+  echo "Please restart the terminal and run after ./~.dotfiles/config.sh"
 }
 
 main
