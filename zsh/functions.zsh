@@ -55,3 +55,4 @@ function nvm_lts {
 function scd {
   ssh -t "$1" "cd /mnt/app/bin ; exec \$SHELL -l";
 }
+

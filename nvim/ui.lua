@@ -1,10 +1,10 @@
-local UI = {}
+local ui = {}
 
-UI = {
+ui = {
 	theme = "catppuccin",
 	nvdash = {
 		load_on_startup = true,
 	},
 }
 
-return UI
+return ui

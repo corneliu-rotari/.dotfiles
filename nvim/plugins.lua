@@ -30,5 +30,23 @@ local plugins = {
 			},
 		},
 	},
+	{ -- WhichKey overrides
+		"folke/which-key.nvim",
+		config = function(_, opts)
+			dofile(vim.g.base46_cache .. "whichkey")
+			require("which-key").setup(opts)
+
+			local wk = require("which-key")
+			wk.register({
+				["<leader>"] = {
+					f = { name = "File" },
+					n = { name = "NvChad" },
+					m = { name = "Mason" },
+					t = { name = "Terminal" },
+				},
+			})
+		end,
+	},
 }
+
 return plugins

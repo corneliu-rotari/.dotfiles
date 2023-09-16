@@ -1,4 +1,3 @@
-local os_output = vim.fn.system("uname -a")
 local wslenv = vim.fn.getenv("WSLENV") ~= vim.NIL
 
 if wslenv then
@@ -14,8 +13,4 @@ if wslenv then
 		},
 		cache_enabled = false,
 	}
-elseif string.match(os_output, "Linux") == "Linux" then
-	vim.opt.clipboard = "unnamedplus"
-else
-	print("Running in PowerShell or another environment")
 end

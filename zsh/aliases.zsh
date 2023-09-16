@@ -1,3 +1,4 @@
+alias apt="sudo /usr/bin/apt"
 alias rr='sudo su -'
 alias old_ls="/usr/bin/ls"
 
