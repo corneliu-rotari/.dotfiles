@@ -22,8 +22,11 @@ local plugins = {
 		opts = {
 			ensure_installed = {
 				"clangd",
+				"clang-format",
 				"stylua",
+				"bash-language-server",
 				"lua-language-server",
+				"shfmt",
 			},
 		},
 	},
