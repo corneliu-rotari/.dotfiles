@@ -13,3 +13,18 @@ git clone --recursive git@github.com:corneliu-rotari/.dotfiles.git ~/.dotfiles
 cd .dotfiles
 ./install.sh
 ```
+
+## Config
+
+```bash
+./config.sh
+```
+
+### NVIM
+
+Run the next commands
+
+```vim
+:MasonInstallAll
+```
+
