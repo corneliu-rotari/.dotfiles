@@ -33,7 +33,7 @@ i_dep()
   sudo apt install -y zsh gdb binutils curl tmux gcc valgrind \
                       g++ make python3 python3-pip zip unzip \
                       python3-venv shellcheck  ripgrep \
-                      software-properties-common
+                      software-properties-common xclip 
   chsh -s "$(which zsh)"
 }
 
