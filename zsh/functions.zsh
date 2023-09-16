@@ -56,3 +56,9 @@ function scd {
   ssh -t "$1" "cd /mnt/app/bin ; exec \$SHELL -l";
 }
 
+function save_dotfiles {
+  cd ~/.dotfiles
+  git add .
+  git commit -m $1
+  git push
+}
