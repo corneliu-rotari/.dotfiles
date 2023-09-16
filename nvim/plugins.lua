@@ -39,10 +39,15 @@ local plugins = {
 			local wk = require("which-key")
 			wk.register({
 				["<leader>"] = {
+          name = "Leader",
 					f = { name = "File" },
 					n = { name = "NvChad" },
 					m = { name = "Mason" },
 					t = { name = "Terminal" },
+					l = { name = "LSP" },
+					g = { name = "Git" },
+					j = { name = "Jump" },
+					b = { name = "Buffer" },
 				},
 			})
 		end,
