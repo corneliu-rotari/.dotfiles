@@ -1,3 +1,4 @@
+local ei = require("custom.configs.ensure_installed")
 local plugins = {
 	{
 		"christoomey/vim-tmux-navigator",
@@ -17,20 +18,7 @@ local plugins = {
 			require("custom.configs.lspconfig")
 		end,
 	},
-	{
-		"williamboman/mason.nvim",
-		opts = {
-			ensure_installed = {
-				"clangd",
-				"clang-format",
-				"stylua",
-				"bash-language-server",
-				"lua-language-server",
-				"shfmt",
-			},
-		},
-	},
-	{ -- WhichKey overrides
+  { -- WhichKey overrides
 		"folke/which-key.nvim",
 		config = function(_, opts)
 			dofile(vim.g.base46_cache .. "whichkey")
@@ -48,9 +36,18 @@ local plugins = {
 					g = { name = "Git" },
 					j = { name = "Jump" },
 					b = { name = "Buffer" },
+					w = { name = "Workspace" },
 				},
 			})
 		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		opts = ei.mason,
+	},
+	{
+    "nvim-treesitter/nvim-treesitter",
+		opts = ei.treesitter,
 	},
 }
 

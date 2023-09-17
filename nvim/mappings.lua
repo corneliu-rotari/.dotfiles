@@ -22,35 +22,35 @@ local M = {
 				function()
 					require("nvchad.renamer").open()
 				end,
-				"LSP rename",
+				"Rename",
 			},
 
-			["<leader>lK"] = {
+			["<leader>lh"] = {
 				function()
 					vim.lsp.buf.hover()
 				end,
-				"LSP hover",
+				"Hover",
 			},
 
-			["<leader>lgi"] = {
+			["<leader>li"] = {
 				function()
 					vim.lsp.buf.implementation()
 				end,
-				"LSP implementation",
+				"Implementation",
 			},
 
 			["<leader>ls"] = {
 				function()
 					vim.lsp.buf.signature_help()
 				end,
-				"LSP signature help",
+				"Signature help",
 			},
 
-			["<leader>lD"] = {
+			["<leader>lt"] = {
 				function()
 					vim.lsp.buf.type_definition()
 				end,
-				"LSP definition type",
+				"Type definition",
 			},
 
 			["<leader>la"] = {
@@ -60,11 +60,11 @@ local M = {
 				"LSP code action/fix",
 			},
 
-			["<leader>lgr"] = {
+			["<leader>lR"] = {
 				function()
 					vim.lsp.buf.references()
 				end,
-				"LSP references",
+				"References",
 			},
 
 			["<leader>lx"] = {
@@ -104,19 +104,38 @@ local M = {
 	git = {
 		n = {
 			["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
-			["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+			["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+			["<leader>gd"] = {
+				function()
+					require("gitsigns").toggle_deleted()
+				end,
+				"Toggle deleted",
+			},
 		},
 	},
-
 	buffers = {
 		n = {
 			["<leader>bf"] = { "<cmd> Telescope buffers <CR>", "Find in buffers" },
-			["<leader>bn"] = { "<cmd> enew <CR>", "New buffer" },
+			["<leader>bb"] = { "<cmd> enew <CR>", "New buffer" },
 			["<leader>bc"] = {
 				function()
 					require("nvchad.tabufline").close_buffer()
 				end,
 				"Close buffer",
+			},
+
+			["<leader>bn"] = {
+				function()
+					require("nvchad.tabufline").tabuflineNext()
+				end,
+				"Goto next buffer",
+			},
+
+			["<leader>bp"] = {
+				function()
+					require("nvchad.tabufline").tabuflinePrev()
+				end,
+				"Goto prev buffer",
 			},
 		},
 	},
@@ -168,6 +187,21 @@ local M = {
 				end,
 				"Definition",
 			},
+			["<leader>jc"] = {
+				function()
+					local ok, start = require("indent_blankline.utils").get_current_context(
+						vim.g.indent_blankline_context_patterns,
+						vim.g.indent_blankline_use_treesitter_scope
+					)
+
+					if ok then
+						vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { start, 0 })
+						vim.cmd([[normal! _]])
+					end
+				end,
+
+				"Jump to current context",
+			},
 		},
 	},
 
@@ -184,12 +218,39 @@ local M = {
 			["<leader>ca"] = "",
 			["<leader>ch"] = "",
 			["<leader>rn"] = "",
-			["gd"] = "",
-			["gD"] = "",
 			["<leader>pt"] = "",
 			["<leader>wk"] = "",
 			["<leader>wK"] = "",
+			["<leader>D"] = "",
+			["<leader>td"] = "",
+			["]c"] = "",
+			["[c"] = "",
+			["<leader>rh"] = "",
+			["<leader>ph"] = "",
+			["<leader>cc"] = "",
+			["<leader>q"] = "",
+			["<leader>ra"] = "",
 		},
 	},
+  learn = {
+    v = {
+			["<Up>"] = { ":noh <CR>", "Clear highlights" },
+			["<Down>"] = { ":noh <CR>", "Clear highlights" },
+			["<Left>"] = { ":noh <CR>", "Clear highlights" },
+			["<Right>"] = { ":noh <CR>", "Clear highlights" },
+    },
+    n = {
+			["<Up>"] = { ":noh <CR>", "Clear highlights" },
+			["<Down>"] = { ":noh <CR>", "Clear highlights" },
+			["<Left>"] = { ":noh <CR>", "Clear highlights" },
+			["<Right>"] = { ":noh <CR>", "Clear highlights" },
+    },
+    i = {
+			["<Up>"] = { ":noh <CR>", "Clear highlights" },
+			["<Down>"] = { ":noh <CR>", "Clear highlights" },
+			["<Left>"] = { ":noh <CR>", "Clear highlights" },
+			["<Right>"] = { ":noh <CR>", "Clear highlights" },
+    },
+  }
 }
 return M

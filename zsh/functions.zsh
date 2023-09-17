@@ -48,7 +48,10 @@ function nvm_lts {
   nvm use --lts
   if check_input "Do you want to reinstall packages?"
   then
-    echo "Reinstalling"
+    
+			echo -n "Select a version from which to reinstall (e.g 18.13.0)"
+			read vers
+			nvm reinstall-packages $vers
   fi
 }
 
