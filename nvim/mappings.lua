@@ -174,19 +174,23 @@ local M = {
 
 	jump = {
 		n = {
-			["<leader>jD"] = {
-				function()
-					vim.lsp.buf.declaration()
-				end,
-				"Declaration",
-			},
-
-			["<leader>jd"] = {
-				function()
-					vim.lsp.buf.definition()
-				end,
-				"Definition",
-			},
+			["<leader>jn"] = { "<C-I>", "Next jump" },
+			["<leader>jd"] = { "<cmd> cle <CR>", "Delete jumps" },
+			["<leader>jp"] = { "<C-O>", "Prev jump" },
+			["<leader>jl"] = { "<cmd> ju <CR>", "List jumps" },
+			-- ["<leader>jD"] = {
+			-- 	function()
+			-- 		vim.lsp.buf.declaration()
+			-- 	end,
+			-- 	"Declaration",
+			-- },
+			--
+			-- ["<leader>jd"] = {
+			-- 	function()
+			-- 		vim.lsp.buf.definition()
+			-- 	end,
+			-- 	"Definition",
+			-- },
 			["<leader>jc"] = {
 				function()
 					local ok, start = require("indent_blankline.utils").get_current_context(
