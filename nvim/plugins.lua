@@ -18,7 +18,7 @@ local plugins = {
 			require("custom.configs.lspconfig")
 		end,
 	},
-  { -- WhichKey overrides
+	{ -- WhichKey overrides
 		"folke/which-key.nvim",
 		config = function(_, opts)
 			dofile(vim.g.base46_cache .. "whichkey")
@@ -27,11 +27,15 @@ local plugins = {
 			local wk = require("which-key")
 			wk.register({
 				["<leader>"] = {
-          name = "Leader",
+					name = "Leader",
 					f = { name = "File" },
-					n = { name = "NvChad" },
-					m = { name = "Mason" },
+					c = {
+						name = "Config",
+						n = { name = "NvChad" },
+						m = { name = "Mason" },
+					},
 					t = { name = "Terminal" },
+					m = { name = "Marks" },
 					l = { name = "LSP" },
 					g = { name = "Git" },
 					j = { name = "Jump" },
@@ -46,7 +50,7 @@ local plugins = {
 		opts = ei.mason,
 	},
 	{
-    "nvim-treesitter/nvim-treesitter",
+		"nvim-treesitter/nvim-treesitter",
 		opts = ei.treesitter,
 	},
 }

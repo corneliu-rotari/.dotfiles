@@ -76,13 +76,6 @@ local M = {
 		},
 	},
 
-	mason = {
-		n = {
-			["<leader>mm"] = { "<cmd> Mason <CR>", "GUI" },
-			["<leader>mi"] = { "<cmd> MasonInstallAll <CR>", "Install All" },
-			["<leader>mu"] = { "<cmd> MasonUninstallAll <CR> ", "Uninstall All" },
-		},
-	},
 
 	files = {
 		n = {
@@ -97,10 +90,13 @@ local M = {
 			["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols<cr>", "Find Document Symbols" },
 			["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Find words in files" },
 
-			["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
 		},
 	},
-
+  marks = {
+    n = {
+			["<leader>ml"] = { "<cmd> Telescope marks <CR>", "List marks" },
+    },
+  },
 	git = {
 		n = {
 			["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
@@ -159,11 +155,14 @@ local M = {
 		},
 	},
 
-	nvchad = {
+	config = {
 		n = {
-			["<leader>nt"] = { "<cmd> Telescope themes <CR>", "Themes" },
-			["<leader>nm"] = { "<cmd> NvCheatsheet <CR>", "Mappings" },
-			["<leader>nk"] = {
+			["<leader>cmm"] = { "<cmd> Mason <CR>", "GUI" },
+			["<leader>cmi"] = { "<cmd> MasonInstallAll <CR>", "Install All" },
+			["<leader>cmu"] = { "<cmd> MasonUninstallAll <CR> ", "Uninstall All" },
+			["<leader>ct"] = { "<cmd> Telescope themes <CR>", "Themes" },
+			["<leader>cu"] = { "<cmd> NvChadUpdate <CR>", "Update" },
+			["<leader>ck"] = {
 				function()
 					vim.cmd("WhichKey")
 				end,
@@ -177,20 +176,7 @@ local M = {
 			["<leader>jn"] = { "<C-I>", "Next jump" },
 			["<leader>jd"] = { "<cmd> cle <CR>", "Delete jumps" },
 			["<leader>jp"] = { "<C-O>", "Prev jump" },
-			["<leader>jl"] = { "<cmd> ju <CR>", "List jumps" },
-			-- ["<leader>jD"] = {
-			-- 	function()
-			-- 		vim.lsp.buf.declaration()
-			-- 	end,
-			-- 	"Declaration",
-			-- },
-			--
-			-- ["<leader>jd"] = {
-			-- 	function()
-			-- 		vim.lsp.buf.definition()
-			-- 	end,
-			-- 	"Definition",
-			-- },
+			["<leader>jl"] = { "<cmd> Telescope jumplist <CR>", "List jumps" },
 			["<leader>jc"] = {
 				function()
 					local ok, start = require("indent_blankline.utils").get_current_context(
@@ -203,8 +189,7 @@ local M = {
 						vim.cmd([[normal! _]])
 					end
 				end,
-
-				"Jump to current context",
+				"Current context",
 			},
 		},
 	},
@@ -212,6 +197,7 @@ local M = {
 	disabled = {
 		n = {
 			["<leader>e"] = "",
+			["<leader>ma"] = "",
 			["<leader>fz"] = "",
 			["<leader>n"] = "",
 			["<leader>h"] = "",
@@ -236,25 +222,25 @@ local M = {
 			["<leader>ra"] = "",
 		},
 	},
-  learn = {
-    v = {
+	learn = {
+		v = {
 			["<Up>"] = { ":noh <CR>", "Clear highlights" },
 			["<Down>"] = { ":noh <CR>", "Clear highlights" },
 			["<Left>"] = { ":noh <CR>", "Clear highlights" },
 			["<Right>"] = { ":noh <CR>", "Clear highlights" },
-    },
-    n = {
+		},
+		n = {
 			["<Up>"] = { ":noh <CR>", "Clear highlights" },
 			["<Down>"] = { ":noh <CR>", "Clear highlights" },
 			["<Left>"] = { ":noh <CR>", "Clear highlights" },
 			["<Right>"] = { ":noh <CR>", "Clear highlights" },
-    },
-    i = {
+		},
+		i = {
 			["<Up>"] = { ":noh <CR>", "Clear highlights" },
 			["<Down>"] = { ":noh <CR>", "Clear highlights" },
 			["<Left>"] = { ":noh <CR>", "Clear highlights" },
 			["<Right>"] = { ":noh <CR>", "Clear highlights" },
-    },
-  }
+		},
+	},
 }
 return M
