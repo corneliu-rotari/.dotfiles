@@ -76,7 +76,6 @@ local M = {
 		},
 	},
 
-
 	files = {
 		n = {
 			["<leader>fa"] = {
@@ -89,14 +88,13 @@ local M = {
 			["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find old files" },
 			["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols<cr>", "Find Document Symbols" },
 			["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Find words in files" },
-
 		},
 	},
-  marks = {
-    n = {
+	marks = {
+		n = {
 			["<leader>ml"] = { "<cmd> Telescope marks <CR>", "List marks" },
-    },
-  },
+		},
+	},
 	git = {
 		n = {
 			["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },

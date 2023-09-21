@@ -21,8 +21,9 @@ autocmd({ "VimEnter" }, {
 	end,
 })
 
-autocmd({ "BufReadPost", "FileReadPost" }, {
+autocmd({ "BufWinEnter" }, {
 	callback = function(_)
-		vim.cmd("set foldlevel=100")
+		-- vim.cmd("set nofoldenable")
+		vim.cmd("normal zR")
 	end,
 })
