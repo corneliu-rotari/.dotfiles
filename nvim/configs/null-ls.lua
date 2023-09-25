@@ -8,10 +8,14 @@ local sources = {
 		filetypes = { "gitcommit", "markdown", "text", "asciidoc" },
 	}),
 	formatting.prettier,
+	formatting.shfmt.with({
+		filetypes = { "sh", "zsh" },
+	}),
 	formatting.stylua,
 	formatting.clang_format,
-	formatting.shfmt,
-	lint.shellcheck,
+	lint.shellcheck.with({
+		filetypes = { "sh", "zsh" },
+	}),
 }
 
 null_ls.setup({
