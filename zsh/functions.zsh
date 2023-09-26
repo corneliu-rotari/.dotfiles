@@ -9,7 +9,7 @@ tree() {
 svn_all() {
 	clear
 	for D in $(find /home/vcs/ -maxdepth 1 -type d); do
-		if [[ "$D" != "/home/vcs/" ]]; then
+		if [ "$D" != "/home/vcs/" ] && [ "$D" != "/home/vcs/test_ground/" ]; then
 			echo "$D"
 			svn $@ $D
 			echo
@@ -68,5 +68,5 @@ reload() {
 }
 
 change_ext() {
-	for file in *.sh; do mv "$file" "${file%.sh}.zsh"; done
+	for file in *.$1; do mv "$file" "${file%.$1}.$2"; done
 }

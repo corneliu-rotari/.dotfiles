@@ -1,8 +1,9 @@
 alias apt="sudo /usr/bin/apt"
 alias rr='sudo su -'
 alias old_ls="/usr/bin/ls"
-alias up="sudo apt-get update && sudo apt-get upgrade -y && clear"
 alias up_dot="cd ~/.dotfiles && git pull && cd -"
+alias up="sudo apt-get update && sudo apt-get upgrade -y \
+          up_dot && omz update && clear"
 
 alias clear_vim_swap="rm -rf ~/.local/state/nvim/swap/*"
 alias clar="clear"

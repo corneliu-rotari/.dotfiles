@@ -25,5 +25,6 @@ autocmd({ "BufWinEnter" }, {
 	callback = function(_)
 		-- vim.cmd("set nofoldenable")
 		vim.cmd("normal zR")
+		vim.cmd("highlight Folded guibg=none guifg=gray")
 	end,
 })
