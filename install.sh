@@ -51,6 +51,10 @@ conf_ln() {
 	ln_if "$DOT/i3" ~/.config/i3
 	ln_if "$DOT/tmux" ~/.config/tmux
 	ln_if "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
+
+  if ! check_wsl; then
+    ln_if ""
+  fi
 }
 
 conf_nvm() {

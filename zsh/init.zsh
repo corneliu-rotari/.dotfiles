@@ -23,3 +23,5 @@ source_if_exists "$ZSH_CONFIG/aliases.zsh"
 source_if_exists "$ZSH_CONFIG/functions.zsh"
 source_if_exists "$HOME/.cargo/env"
 source_if_exists "$HOME/.ghcup/env"
+
+trap 'exit_handler' EXIT

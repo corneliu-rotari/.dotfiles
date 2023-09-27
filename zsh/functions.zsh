@@ -101,3 +101,9 @@ reload() {
 change_ext() {
 	for file in *.$1; do mv "$file" "${file%.$1}.$2"; done
 }
+
+exit_handler() {
+  save_gnome
+  save_dotfiles
+}
+
