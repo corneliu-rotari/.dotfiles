@@ -25,13 +25,15 @@ i_dep() {
 	# sudo apt-get installl openjdk-19-jdk openjdk-19-source
 
 	if check_wsl; then
-		sudo apt install -y wslu
+		sudo apt install -y wslu      # WSL specific
+	else
+		sudo apt install -y xclip     # Linux specific
 	fi
 
 	sudo apt install -y zsh gdb binutils curl tmux gcc valgrind \
 		g++ make python3 python3-pip zip unzip \
 		python3-venv shellcheck ripgrep \
-		software-properties-common xclip bear
+		software-properties-common bear
 	chsh -s "$(which zsh)"
 }
 
