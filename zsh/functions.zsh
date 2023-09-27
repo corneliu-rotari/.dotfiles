@@ -102,9 +102,3 @@ change_ext() {
 	for file in *.$1; do mv "$file" "${file%.$1}.$2"; done
 }
 
-exit_handler() {
-	save_gnome
-	if [ -n "$(git status --porcelain)" ]; then
-		save_dotfiles "Generic save after exit."
-	fi
-}
