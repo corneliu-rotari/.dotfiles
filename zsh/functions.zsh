@@ -1,3 +1,26 @@
+T=0
+F=1
+
+ln_if() {
+	if [ -e "$2" ] || [ -L "$2" ]; then
+		echo "[Deleted] $2"
+		rm -rf "$2"
+	fi
+
+	ln -s "$1" "$2"
+	echo "[Created] Symbolic Link to $2"
+}
+
+log() {
+	clear
+	line='='
+	name="[$1]"
+	x=$((($(tput cols) - 4) / 2))
+	for i in $(seq 1 $x); do line="=${line}"; done
+	padding="${line:$((${#name} / 2))}"
+	printf "%s%s%s\n" $padding $name $padding
+}
+
 tree() {
 	if [ $# -ne 1 ]; then
 		ls --tree --level=3
@@ -29,10 +52,18 @@ check_input() {
 	echo -n "$1 [Y/n] "
 	read -r user_input
 	if [ "$user_input" != "n" ] && [ "$user_input" != "N" ] && [ "$user_input" != "no" ] && [ "$user_input" != "No" ]; then
-		return 0
+		return $F
 	else
-		return 1
+		return $T
 	fi
+}
+
+check_wsl() {
+	sys_info="$(uname -a)"
+	if [[ "$sys_info" == *"Microsoft"* ]] || [[ "$sys_info" == *"microsoft"* ]] || [[ "$sys_info" == *"WSL"* ]]; then
+		return $T
+	fi
+	return $F
 }
 
 nvm_lts() {
@@ -63,7 +94,7 @@ save_dotfiles() {
 }
 
 reload() {
-	source "$HOME/.zshrc" 
+	source "$HOME/.zshrc"
 	source "$HOME/.zshenv"
 }
 

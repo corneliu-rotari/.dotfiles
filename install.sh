@@ -1,10 +1,7 @@
 #!/bin/bash
 DOT="$HOME/.dotfiles"
 
-log() {
-	clear
-	echo "====================[$1 Configuration]===================="
-}
+source "$DOT/zsh/functions.zsh"
 
 create_dirs() {
 	log "Directory"
@@ -27,6 +24,10 @@ i_dep() {
 	# sudo add-apt-repository ppa:openjdk-r/ppa
 	# sudo apt-get installl openjdk-19-jdk openjdk-19-source
 
+	if check_wsl; then
+		sudo apt install -y wslu
+	fi
+
 	sudo apt install -y zsh gdb binutils curl tmux gcc valgrind \
 		g++ make python3 python3-pip zip unzip \
 		python3-venv shellcheck ripgrep \
@@ -36,16 +37,6 @@ i_dep() {
 
 conf_ln() {
 	log "Links"
-
-	ln_if() {
-		if [ -e "$2" ] || [ -L "$2" ]; then
-			echo "[Deleted] $2"
-			rm -rf "$2"
-		fi
-
-		ln -s "$1" "$2"
-		echo "[Created] Symbolic Link to $2"
-	}
 
 	# ZSH config
 	ln_if "$DOT/zsh/init.zsh" ~/.zshrc
