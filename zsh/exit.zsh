@@ -1,7 +1,7 @@
 source "$DOT/zsh/functions.zsh"
 
 exit_handler() {
-	if check_wsl; then
+	if ! check_wsl; then
 		save_gnome
 	fi
 	cd "$DOT" || exit
