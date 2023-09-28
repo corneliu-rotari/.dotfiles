@@ -32,7 +32,7 @@ tree() {
 svn_all() {
 	clear
 	for D in $(find /home/vcs/ -maxdepth 1 -type d); do
-		if [ "$D" != "/home/vcs/" ] && [ "$D" != *"test_ground"* ]; then
+		if [ "$D" != "/home/vcs/" ] && [ "$D" != *"test_ground" ]; then
 			echo "$D"
 			svn $@ $D
 			echo
