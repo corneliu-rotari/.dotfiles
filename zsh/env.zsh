@@ -12,6 +12,6 @@ export DOT="$HOME/.dotfiles"
 source "$DOT/zsh/functions.zsh"
 
 if check_wsl; then
-  wslpath "$(wslvar USERPROFILE)"
+  export WHOME=$(wslpath "$(wslvar USERPROFILE)")
 fi
 

@@ -53,7 +53,8 @@ conf_ln() {
 	ln_if "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
 
   if ! check_wsl; then
-    ln_if ""
+    source "$HOME/.zshenv"
+    ln_if "$WHOME" ~/windows
   fi
 }
 
