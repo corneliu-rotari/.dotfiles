@@ -1,6 +1,7 @@
 source "$DOT/zsh/functions.zsh"
 
 exit_handler() {
+  return
 	if check_input "Save on exit?"; then
 		if ! check_wsl; then
 			save_gnome

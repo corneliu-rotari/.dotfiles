@@ -9,6 +9,7 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+  zsh-vi-mode
 )
 
 source_if_exists() {
