@@ -52,9 +52,9 @@ check_input() {
 	echo -n "$1 [Y/n] "
 	read -r user_input
 	if [ "$user_input" != "n" ] && [ "$user_input" != "N" ] && [ "$user_input" != "no" ] && [ "$user_input" != "No" ]; then
-		return $F
-	else
 		return $T
+	else
+		return $F
 	fi
 }
 
