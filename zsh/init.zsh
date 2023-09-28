@@ -26,4 +26,4 @@ source_if_exists "$HOME/.cargo/env"
 source_if_exists "$HOME/.ghcup/env"
 
 
-trap 'exit_handler' EXIT
+trap 'exit_handler' EXIT SIGTERM
