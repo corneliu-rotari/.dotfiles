@@ -15,4 +15,4 @@ if check_wsl; then
   export WHOME=$(wslpath "$(wslvar USERPROFILE)")
 fi
 
-export EDITOR="vim"
+export EDITOR="nvim"
