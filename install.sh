@@ -27,7 +27,7 @@ i_dep() {
 	if check_wsl; then
 		sudo apt install -y wslu      # WSL specific
 	else
-		sudo apt install -y i3 picom xclip     # Linux specific
+		sudo apt install -y picom xclip     # Linux specific
 	fi
 
 	sudo apt install -y zsh gdb binutils curl tmux gcc valgrind \

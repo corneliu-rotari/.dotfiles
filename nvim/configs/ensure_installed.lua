@@ -7,6 +7,8 @@ local ei = {
 			"lua-language-server",
 			"bash-language-server",
 			"shfmt",
+			"grammarly-languageserver",
+			"prettier",
 		},
 	},
 	treesitter = {

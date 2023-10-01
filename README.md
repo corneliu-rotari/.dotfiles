@@ -1,15 +1,13 @@
-# .dotfiles
-
 ## Installing
 
 ```bash
-git clone --recursive https://github.com/corneliu-rotari/.dotfiles ~/.dotfiles 
+git clone --recursive https://github.com/corneliu-rotari/.dotfiles ~/.dotfiles
 cd .dotfiles
 ./install.sh
 ```
 
 ```bash
-git clone --recursive git@github.com:corneliu-rotari/.dotfiles.git ~/.dotfiles 
+git clone --recursive git@github.com:corneliu-rotari/.dotfiles.git ~/.dotfiles
 cd .dotfiles
 ./install.sh
 ```
@@ -28,3 +26,6 @@ Run the next commands
 :MasonInstallAll
 ```
 
+### Extra
+
+- `i3` - Install from the i3 site for better support on Ubuntu (#https://i3wm.org/docs/repositories.html)
