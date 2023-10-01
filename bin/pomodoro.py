@@ -1,8 +1,24 @@
 import os
 import time
 import signal
-from varibles import *
 from pygame import mixer
+
+
+# figlet -f big -W "Name"
+
+seconds = 60
+work_time = 50
+small_break = 10
+big_break = 30
+
+alarm_path = '/mnt/c/Windows/Media/Alarm07.wav'
+break_playlist = "My playlist"
+work_playlist = "Japanese Lofi HipHop"
+
+
+rest_art = "break"
+exit_art = "end"
+work_art = "work"
 
 mixer.init()
 list_of_subjects = []

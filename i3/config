@@ -203,3 +203,5 @@ gaps inner 10
 gaps outer 10
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+
+exec_always display.sh 

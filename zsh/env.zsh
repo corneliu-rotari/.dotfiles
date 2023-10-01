@@ -2,6 +2,8 @@ typeset -U path PATH
 path=(~/.local/bin $path)
 path=(~/.local/share/bob/nvim-bin $path)
 path=(~/.local/share/coursier/bin $path)
+path=(~/.dotfiles/bin $path)
+path=(~/.dotfiles/lib $path)
 export PATH
 
 export NVM_DIR="$HOME/.nvm"
