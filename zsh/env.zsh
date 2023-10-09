@@ -12,3 +12,5 @@ export NVM_DIR="$HOME/.nvm"
 
 export DOT="$HOME/.dotfiles"
 export EDITOR="nvim"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
