@@ -25,9 +25,9 @@ i_dep() {
 	# sudo apt-get installl openjdk-19-jdk openjdk-19-source
 
 	if check_wsl; then
-		sudo apt install -y wslu      # WSL specific
+		sudo apt install -y wslu # WSL specific
 	else
-		sudo apt install -y xclip     # Linux specific
+		sudo apt install -y xclip # Linux specific
 	fi
 
 	sudo apt install -y zsh gdb binutils curl tmux gcc valgrind \
@@ -52,16 +52,21 @@ conf_ln() {
 	ln_if "$DOT/tmux" ~/.config/tmux
 	ln_if "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
 
-  if ! check_wsl; then
-    source "$HOME/.zshenv"
-    ln_if "$WHOME" ~/windows
-  fi
+	if ! check_wsl; then
+		ln_if "$(wslpath "$(wslvar USERPROFILE)")" ~/windows
+	fi
 }
 
 conf_nvm() {
 	log "NVM"
 	source "$DOT/zsh/functions.zsh"
 	nvm_lts
+}
+
+wsl_config() {
+  if ! check_wsl; then
+    return
+  fi
 }
 
 # Main
