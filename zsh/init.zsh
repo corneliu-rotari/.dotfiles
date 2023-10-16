@@ -1,7 +1,5 @@
 export ZSH="$DOT/modules/oh-my-zsh"
-ZSH_CONFIG="$DOT/zsh"
-export ZSH_CUSTOM="$ZSH_CONFIG/custom"
-
+export ZSH_CUSTOM="$DOT_ZSH/custom"
 export ZSH_THEME="lambda"
 zstyle ':omz:update' mode reminder # just remind me to update when it's time
 
@@ -12,19 +10,20 @@ plugins=(
   zsh-vi-mode
 )
 
-source_if_exists() {
+source_if() {
 	if test -r "$1"; then
 		source "$1"
+  else
+    echo "$1 does not exist"
 	fi
 }
 
-source_if_exists "$ZSH/oh-my-zsh.sh"
-
-source_if_exists "$ZSH_CONFIG/aliases.zsh"
-source_if_exists "$ZSH_CONFIG/functions.zsh"
-source_if_exists "$ZSH_CONFIG/exit.zsh"
-source_if_exists "$HOME/.cargo/env"
-source_if_exists "$HOME/.ghcup/env"
+source_if "$ZSH/oh-my-zsh.sh"
+source_if "$DOT_ZSH/alias/init.zsh"
+source_if "$DOT_ZSH/function/init.zsh"
+source_if "$DOT_ZSH/exit.zsh"
+source_if "$HOME/.cargo/env"
+source_if "$HOME/.ghcup/env"
 
 
 trap 'exit_handler' EXIT SIGTERM

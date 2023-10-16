@@ -1,5 +1,3 @@
-T=0
-F=1
 
 ln_if() {
 	if [ -e "$2" ] || [ -L "$2" ]; then
@@ -47,25 +45,6 @@ vcs() {
 	fi
 }
 
-check_input() {
-	echo
-	echo -n "$1 [Y/n] "
-	read -r user_input
-	if [ "$user_input" != "n" ] && [ "$user_input" != "N" ] && [ "$user_input" != "no" ] && [ "$user_input" != "No" ]; then
-		return $T
-	else
-		return $F
-	fi
-}
-
-check_wsl() {
-	sys_info="$(uname -a)"
-	if [[ "$sys_info" == *"Microsoft"* ]] || [[ "$sys_info" == *"microsoft"* ]] || [[ "$sys_info" == *"WSL"* ]]; then
-		return $T
-	fi
-	return $F
-}
-
 nvm_lts() {
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
@@ -73,7 +52,7 @@ nvm_lts() {
 
 	nvm install --lts
 	nvm use --lts
-	if check_input "Do you want to reinstall packages?"; then
+	if check input "Do you want to reinstall packages?"; then
 
 		echo -n "Select a version from which to reinstall (e.g 18.13.0)"
 		read -r vers
@@ -85,38 +64,12 @@ scd() {
 	ssh -t "$1" "cd /mnt/app/bin ; exec \$SHELL -l"
 }
 
-save_dotfiles() {
-	cd ~/.dotfiles || return
-	git add .
-	git commit -m $1
-	git push
-	cd - || exit
-}
-
-reload() {
-	source "$HOME/.zshrc"
-	source "$HOME/.zshenv"
-}
 
 change_ext() {
-	for file in *.$1; do mv "$file" "${file%.$1}.$2"; done
+	for file in *.$1; do mv "$file" "${file%.'$1'}.$2"; done
 }
 
-egc() {
-	if [ "$#" -lt "1" ]; then
-    code "$HOME/dev/gfx-framework"
-    return
-	fi
-  if [[ "$1" == "run" ]]; then
-    egc build
-    "$HOME/dev/gfx-framework/build/bin/Debug/GFXFramework"
-  elif [[ "$1" == "build" ]];then
-    mkdir -p "$HOME/dev/gfx-framework/build"
-    cd "$HOME/dev/gfx-framework/build"
-    cmake ..
-    make
-    cd -
-  elif [[ "$1" == "clean" ]];then
-    rm -rf "$HOME/dev/gfx-framework/build"
-  fi
+
+my_du() {
+  find "$1" -maxdepth 1 -mindepth 1 -print0 | xargs --null du -sh | sort -h
 }

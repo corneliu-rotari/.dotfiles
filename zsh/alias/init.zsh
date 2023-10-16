@@ -1,0 +1,6 @@
+AL="$DOT_ZSH/alias"
+source_if "$AL/vcs.zsh"
+source_if "$AL/other.zsh"
+source_if "$AL/locations.zsh"
+source_if "$AL/vim.zsh"
+source_if "$AL/clear.zsh"
