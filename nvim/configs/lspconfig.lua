@@ -3,7 +3,7 @@ local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
-local servers = { "bashls" , "grammarly"}
+local servers = { "bashls", "grammarly", "pyright" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
@@ -12,11 +12,11 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
-lspconfig.clangd.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = {
-    "clangd",
-    "--offset-encoding=utf-16",
-  },
-}
+lspconfig.clangd.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	cmd = {
+		"clangd",
+		"--offset-encoding=utf-16",
+	},
+})

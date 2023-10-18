@@ -8,6 +8,8 @@ local sources = {
 		filetypes = { "gitcommit", "markdown", "text", "asciidoc" },
 	}),
 	formatting.prettier,
+	formatting.black,
+
 	formatting.shfmt.with({
 		filetypes = { "sh", "zsh" },
 	}),

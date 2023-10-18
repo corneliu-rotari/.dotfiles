@@ -2,6 +2,8 @@ local ei = {
 	mason = {
 		ensure_installed = {
 			"clangd",
+			"black",
+			"pyright",
 			"clang-format",
 			"stylua",
 			"lua-language-server",
@@ -14,6 +16,9 @@ local ei = {
 	treesitter = {
 		ensure_installed = {
 			"c",
+      "python",
+      "haskell",
+      "java",
 			"cpp",
 			"vim",
 			"vimdoc",
