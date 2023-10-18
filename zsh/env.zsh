@@ -1,9 +1,9 @@
 typeset -U path PATH
-path=(~/.local/bin $path)
-path=(~/.local/share/bob/nvim-bin $path)
-path=(~/.local/share/coursier/bin $path)
-path=(~/.dotfiles/bin $path)
-path=(~/.dotfiles/lib $path)
+path=("$HOME/.local/bin" $path)
+path=("$HOME/.local/share/bob/nvim-bin" $path)
+path=("$HOME/.local/share/coursier/bin" $path)
+path=("$HOME/.dotfiles/bin" $path)
+path=("$HOME/.dotfiles/lib" $path)
 export PATH
 
 export NVM_DIR="$HOME/.nvm"
@@ -13,5 +13,5 @@ export NVM_DIR="$HOME/.nvm"
 export DOT="$HOME/.dotfiles"
 export DOT_ZSH="$DOT/zsh"
 export EDITOR="nvim"
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
