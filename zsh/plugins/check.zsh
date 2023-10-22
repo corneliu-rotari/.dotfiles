@@ -1,9 +1,18 @@
+read_promt() {
+	if [[ "$SHELL" == *"bash"* ]]; then
+		read -rp "$1" user_input
+	elif [[ "$SHELL" == *"zsh"* ]]; then
+		read -r "user_input?$1"
+  else
+    echo "Unknown shell"
+	fi
+}
+
 check() {
 	case "$1" in
 	"input")
-    local user_input
-    test "$#" -eq "2" || return $?
-		read -r "user_input?$2 [Y/n] "
+		test "$#" -eq "2" || return $?
+		read_promt "$2 [Y/n]"
 		[ "$user_input" != "n" ] && [ "$user_input" != "N" ] && [ "$user_input" != "no" ] && [ "$user_input" != "No" ]
 		;;
 	"wsl")
@@ -11,7 +20,7 @@ check() {
 		[[ "$sys_info" == *"Microsoft"* ]] || [[ "$sys_info" == *"microsoft"* ]] || [[ "$sys_info" == *"WSL"* ]]
 		;;
 	*)
-    echo "Unknown check"
+		echo "Unknown check"
 		;;
 	esac
 }
