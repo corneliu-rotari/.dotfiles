@@ -1,6 +1,7 @@
 #!/bin/bash
-DOT="$HOME/.dotfiles"
-PM="sudo apt"
+export DOT="$HOME/.dotfiles"
+export DOT_ZSH="$DOT/zsh"
+export PM="sudo apt"
 source "$DOT/zsh/plugins/init.zsh"
 
 create_dirs() {
