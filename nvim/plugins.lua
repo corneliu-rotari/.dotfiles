@@ -4,10 +4,10 @@ local plugins = {
 		"christoomey/vim-tmux-navigator",
 		lazy = false,
 	},
-  {
-    "xiyaowong/transparent.nvim",
-    lazy = false,
-  },
+	{
+		"xiyaowong/transparent.nvim",
+		lazy = false,
+	},
 	{
 		"neovim/nvim-lspconfig",
 
@@ -56,6 +56,14 @@ local plugins = {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = ei.treesitter,
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
 	},
 }
 

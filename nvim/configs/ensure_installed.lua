@@ -1,16 +1,19 @@
 local ei = {
 	mason = {
 		ensure_installed = {
-			"clangd",
-			"black",
-			"pyright",
-			"clang-format",
-			"stylua",
-			"lua-language-server",
-			"bash-language-server",
-			"shfmt",
-			"grammarly-languageserver",
-			"prettier",
+      -- Formaters
+			"black",                -- python
+			"clang-format",         -- C/C++
+			"stylua",               -- lua
+			"shfmt",                -- bash
+			"prettier",             -- md
+
+      -- LSP
+			"clangd",               -- C/C++
+			"lua-language-server",  -- lua
+			"marksman",             -- markdown
+			"pyright",              -- python
+			"bash-language-server", -- bash
 		},
 	},
 	treesitter = {

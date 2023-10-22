@@ -160,6 +160,7 @@ local M = {
 			["<leader>cmu"] = { "<cmd> MasonUninstallAll <CR> ", "Uninstall All" },
 			["<leader>ct"] = { "<cmd> Telescope themes <CR>", "Themes" },
 			["<leader>cu"] = { "<cmd> NvChadUpdate <CR>", "Update" },
+			["<leader>cp"] = { "<cmd> Lazy <CR>", "Plugins" },
 			["<leader>ck"] = {
 				function()
 					vim.cmd("WhichKey")

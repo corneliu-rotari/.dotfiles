@@ -1,7 +1,7 @@
 #!/bin/bash
 DOT="$HOME/.dotfiles"
-
-source "$DOT/zsh/functions.zsh"
+PM="sudo apt"
+source "$DOT/zsh/plugins/init.zsh"
 
 create_dirs() {
 	log "Directory"
@@ -19,21 +19,20 @@ i_cargo() {
 
 i_dep() {
 	log "Dependecy"
-	sudo apt-get update && sudo apt-get upgrade
+	$PM update && $PM upgrade
 	# sudo add-apt-repository ppa:git-core/ppa
 	# sudo add-apt-repository ppa:openjdk-r/ppa
-	# sudo apt-get installl openjdk-19-jdk openjdk-19-source
+	# $PM installl openjdk-19-jdk openjdk-19-source
 
-	if check_wsl; then
-		sudo apt install -y wslu # WSL specific
-	else
-		sudo apt install -y xclip # Linux specific
+	if ! check wsl; then
+		$PM install -y xclip # Linux specific
 	fi
 
-	sudo apt install -y zsh gdb binutils curl tmux gcc valgrind \
+	$PM install -y zsh gdb binutils curl tmux gcc valgrind \
 		g++ make python3 python3-pip zip unzip \
-		python3-venv shellcheck ripgrep \
-		software-properties-common bear figlet
+		python3-venv shellcheck software-properties-common \
+		bear figlet ripgrep hping3 wireshark
+
 	chsh -s "$(which zsh)"
 }
 
@@ -51,28 +50,27 @@ conf_ln() {
 	ln_if "$DOT/i3" ~/.config/i3
 	ln_if "$DOT/tmux" ~/.config/tmux
 	ln_if "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
-
-	if ! check_wsl; then
-		ln_if "$(wslpath "$(wslvar USERPROFILE)")" ~/windows
-	fi
 }
 
 conf_nvm() {
 	log "NVM"
-	source "$DOT/zsh/functions.zsh"
-	nvm_lts
+	up nvm
 }
 
 wsl_config() {
-  if ! check_wsl; then
-    return
-  fi
+	if ! check wsl; then
+		return
+	fi
+  log "WSL"
+
+	$PM install -y wslu # WSL specific
+	ln_if "$(wslpath "$(wslvar USERPROFILE)")" ~/windows
 }
 
 # Main
-
 i_dep
 create_dirs
+wsl_config
 conf_ln
 conf_nvm
 i_cargo
