@@ -9,6 +9,7 @@ zstyle ':omz:update' mode reminder # just remind me to update when it's time
 
 plugins=(
 	git
+  web-search
   tmux
 	zsh-autosuggestions
 	zsh-syntax-highlighting
