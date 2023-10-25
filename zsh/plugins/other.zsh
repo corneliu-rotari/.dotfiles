@@ -3,7 +3,8 @@ alias apt="sudo /usr/bin/apt"
 alias rr='sudo su -'
 alias ls="exa --icons"
 alias off_note_display="xrandr --output eDP --off"
-
+alias time="=time -p"
+alias brave="brave-browser"
 
 ln_if() {
 	if [ -e "$2" ] || [ -L "$2" ]; then
@@ -37,12 +38,10 @@ scd() {
 	ssh -t "$1" "cd /mnt/app/bin ; exec \$SHELL -l"
 }
 
-
 change_ext() {
 	for file in *.$1; do mv "$file" "${file%.'$1'}.$2"; done
 }
 
-
 my_du() {
-  find "$1" -maxdepth 1 -mindepth 1 -print0 | xargs --null du -sh | sort -h
+	find "$1" -maxdepth 1 -mindepth 1 -print0 | xargs --null du -sh | sort -h
 }
