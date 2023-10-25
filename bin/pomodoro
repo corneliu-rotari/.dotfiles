@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import time
 import signal
@@ -36,7 +37,7 @@ def assert_input(inp : str, defalt_positive : bool = True) -> bool:
 
 def alarm():
     os.system("clear")
-    os.system("snap run spt playback --toggle > /dev/null")
+    os.system("spt playback --toggle > /dev/null")
     # mixer.music.load(alarm_path)
     # mixer.music.play()
     # time.sleep(5)
@@ -46,7 +47,7 @@ def alarm():
 
 def music(playlist: str):
     os.system("clear")
-    os.system("snap run spt play --name '" + playlist 
+    os.system("spt play --name '" + playlist 
                 + "' --playlist --random > /dev/null")
         
     inp = input("Start timer ? [Y/n] : ")
@@ -110,7 +111,7 @@ def sigint_uni(signo = "", frame = ""):
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, sigint_uni)
-    os.system("spotify &")
+    os.system("spotify >/dev/null &")
     
     os.system("clear")
     type_of_pomodoro = input("Univerisity ? [y/N] ")

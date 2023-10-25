@@ -7,6 +7,7 @@ source "$DOT/zsh/plugins/init.zsh"
 create_dirs() {
 	log "Directory"
 	mkdir -p ~/.config
+	mkdir -p ~/dev
 	mkdir -p "$DOT/tmux/plugins"
 }
 
@@ -33,6 +34,19 @@ i_dep() {
 		g++ make python3 python3-pip zip unzip \
 		python3-venv shellcheck software-properties-common \
 		bear figlet ripgrep hping3 wireshark
+
+	if which brave-browser &>/dev/null; then
+		sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+		echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+    $PM update
+		$PM install brave-browser
+	fi
+
+  if which snap &> /dev/null; then
+    snap install spotify
+  fi
 
 	chsh -s "$(which zsh)"
 }
@@ -63,7 +77,7 @@ wsl_config() {
 	if ! check wsl; then
 		return
 	fi
-  log "WSL"
+	log "WSL"
 
 	$PM install -y wslu # WSL specific
 	ln_if "$(wslpath "$(wslvar USERPROFILE)")" ~/windows
