@@ -17,6 +17,8 @@ i_cargo() {
 	source "$HOME/.cargo/env"
 	cargo install exa
 	cargo install bob-nvim
+	bob install stable
+	bob use stable
 }
 
 i_dep() {
@@ -40,13 +42,13 @@ i_dep() {
 
 		echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
-    $PM update
+		$PM update
 		$PM install brave-browser
 	fi
 
-  if which snap &> /dev/null; then
-    snap install spotify
-  fi
+	if which snap &>/dev/null; then
+		snap install spotify
+	fi
 
 	chsh -s "$(which zsh)"
 }
@@ -54,18 +56,16 @@ i_dep() {
 conf_ln() {
 	log "Links"
 
-	# ZSH config
 	ln_if "$DOT/zsh/init.zsh" ~/.zshrc
 	ln_if "$DOT/zsh/env.zsh" ~/.zshenv
-
-	# MODULES
+	ln_if "$DOT/ssh" ~/.ssh
+	ln_if "$DOT/fonts" ~/.fonts
 	ln_if "$DOT/modules/nvm" ~/.nvm
 	ln_if "$DOT/modules/nvim" ~/.config/nvim
 	ln_if "$DOT/nvim" "$DOT/modules/nvim/lua/custom"
 	ln_if "$DOT/i3" ~/.config/i3
 	ln_if "$DOT/tmux" ~/.config/tmux
 	ln_if "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
-	ln_if "$DOT/fonts" ~/.fonts
 }
 
 conf_nvm() {
@@ -83,12 +83,18 @@ wsl_config() {
 	ln_if "$(wslpath "$(wslvar USERPROFILE)")" ~/windows
 }
 
+post_install() {
+  ssh-keygen
+	~/.config/tmux/plugins/tpm/bin/install_plugins
+  nvim &
+}
+
 # Main
 i_dep
 create_dirs
-wsl_config
 conf_ln
+wsl_config
 conf_nvm
 i_cargo
 clear
-echo "Please restart the terminal and run after ./~.dotfiles/config.sh"
+echo "Restart the system and"
