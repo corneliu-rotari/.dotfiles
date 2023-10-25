@@ -5,10 +5,20 @@ export PM="sudo apt"
 source "$DOT/zsh/plugins/init.zsh"
 
 create_dirs() {
-	log "Directory"
-	mkdir -p ~/.config
-	mkdir -p ~/dev
-	mkdir -p "$DOT/tmux/plugins"
+	log "Directory and Links"
+
+	mkdir -p ~/.config ~/dev "$DOT/tmux/plugins"
+
+	ln_if "$DOT/zsh/init.zsh" ~/.zshrc
+	ln_if "$DOT/zsh/env.zsh" ~/.zshenv
+	ln_if "$DOT/ssh" ~/.ssh
+	ln_if "$DOT/fonts" ~/.fonts
+	ln_if "$DOT/modules/nvm" ~/.nvm
+	ln_if "$DOT/modules/nvim" ~/.config/nvim
+	ln_if "$DOT/nvim" "$DOT/modules/nvim/lua/custom"
+	ln_if "$DOT/i3" ~/.config/i3
+	ln_if "$DOT/tmux" ~/.config/tmux
+	ln_if "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
 }
 
 i_cargo() {
@@ -53,21 +63,6 @@ i_dep() {
 	chsh -s "$(which zsh)"
 }
 
-conf_ln() {
-	log "Links"
-
-	ln_if "$DOT/zsh/init.zsh" ~/.zshrc
-	ln_if "$DOT/zsh/env.zsh" ~/.zshenv
-	ln_if "$DOT/ssh" ~/.ssh
-	ln_if "$DOT/fonts" ~/.fonts
-	ln_if "$DOT/modules/nvm" ~/.nvm
-	ln_if "$DOT/modules/nvim" ~/.config/nvim
-	ln_if "$DOT/nvim" "$DOT/modules/nvim/lua/custom"
-	ln_if "$DOT/i3" ~/.config/i3
-	ln_if "$DOT/tmux" ~/.config/tmux
-	ln_if "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
-}
-
 conf_nvm() {
 	log "NVM"
 	up nvm
@@ -84,17 +79,18 @@ wsl_config() {
 }
 
 post_install() {
+  log "POST"
   ssh-keygen
 	~/.config/tmux/plugins/tpm/bin/install_plugins
   nvim &
 }
 
 # Main
-i_dep
 create_dirs
-conf_ln
+i_dep
 wsl_config
 conf_nvm
 i_cargo
+post_install
 clear
 echo "Restart the system and"
