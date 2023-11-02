@@ -1,6 +1,7 @@
 DOT_PLUG="$DOT_ZSH/plugins"
 
 source "$DOT_PLUG/check.zsh"
+source "$DOT_PLUG/log.zsh"
 source "$DOT_PLUG/egc.zsh"
 source "$DOT_PLUG/save.zsh"
 source "$DOT_PLUG/load.zsh"

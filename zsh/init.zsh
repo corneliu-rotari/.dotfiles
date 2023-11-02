@@ -19,8 +19,6 @@ plugins=(
 source_if() {
 	if test -r "$1"; then
 		source "$1"
-  else
-    echo "[$funcstack[1]] $1 does not exist"
 	fi
 }
 

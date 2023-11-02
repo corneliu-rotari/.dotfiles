@@ -15,15 +15,6 @@ ln_if() {
 	echo "[Created] Symbolic Link to $2"
 }
 
-log() {
-	clear
-	line='='
-	name="[$1]"
-	x=$((($(tput cols) - 4) / 2))
-	for i in $(seq 1 $x); do line="=${line}"; done
-	padding="${line:$((${#name} / 2))}"
-	printf "%s%s%s\n" $padding $name $padding
-}
 
 tree() {
 	if [ $# -ne 1 ]; then

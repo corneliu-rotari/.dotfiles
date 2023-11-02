@@ -13,5 +13,7 @@ export NVM_DIR="$HOME/.nvm"
 export DOT="$HOME/.dotfiles"
 export DOT_ZSH="$DOT/zsh"
 export EDITOR="nvim"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+if [ -d /home/linuxbrew ]; then
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
