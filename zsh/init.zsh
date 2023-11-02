@@ -4,7 +4,7 @@ export ZSH_THEME="lambda"
 export ZSH_THEME="fwalch"
 
 
-# ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=true
 zstyle ':omz:update' mode reminder # just remind me to update when it's time
 
 plugins=(
