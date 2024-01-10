@@ -3,9 +3,6 @@ export ZSH_CUSTOM="$DOT_ZSH/custom"
 export ZSH_THEME="lambda"
 export ZSH_THEME="fwalch"
 
-
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOQUIT=false
 export ZSH_WEB_SEARCH_ENGINES=(
   gist "https://gist.github.com/search?q="
 )
@@ -23,8 +20,6 @@ plugins=(
 source_if() {
 	if test -r "$1"; then
 		source "$1"
-  else
-    echo "[$funcstack[1]] $1 does not exist"
 	fi
 }
 

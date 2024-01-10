@@ -15,8 +15,6 @@ export DOT="$HOME/.dotfiles"
 export DOT_ZSH="$DOT/zsh"
 export EDITOR="nvim"
 
-
-export LD_LIBRARY_PATH="$DOT/lib"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
+if [ -d /home/linuxbrew ]; then
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
