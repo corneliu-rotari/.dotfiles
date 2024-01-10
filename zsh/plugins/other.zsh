@@ -1,11 +1,3 @@
-alias func="functions | grep -a -G \"^[a-z].*()\""
-alias apt="sudo /usr/bin/apt"
-alias rr='sudo su -'
-alias ls="exa --icons"
-alias off_note_display="xrandr --output eDP --off"
-alias time="=time -p"
-alias brave="brave-browser"
-
 ln_if() {
 	if [ -e "$2" ] || [ -L "$2" ]; then
 		echo "[Deleted] $2"
@@ -34,9 +26,6 @@ tree() {
 	fi
 }
 
-scd() {
-	ssh -t "$1" "cd /mnt/app/bin ; exec \$SHELL -l"
-}
 
 change_ext() {
 	for file in *.$1; do mv "$file" "${file%.'$1'}.$2"; done

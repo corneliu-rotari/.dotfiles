@@ -7,6 +7,23 @@ local M = {
 			["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
 			["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
 		},
+		i = {
+			["<C-n>"] = {
+				function()
+					vim.fn.feedkeys(
+						vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true),
+						""
+					)
+				end,
+				"Next elem",
+			},
+			["<C-p>"] = {
+				function()
+					vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+				end,
+				"Prev elem",
+			},
+		},
 	},
 
 	lsp_cmd = {
@@ -219,6 +236,10 @@ local M = {
 			["<leader>cc"] = "",
 			["<leader>q"] = "",
 			["<leader>ra"] = "",
+		},
+		i = {
+			["<C-p>"] = "",
+			["<C-n>"] = "",
 		},
 	},
 	learn = {

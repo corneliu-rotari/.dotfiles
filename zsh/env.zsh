@@ -4,6 +4,7 @@ path=("$HOME/.local/share/bob/nvim-bin" $path)
 path=("$HOME/.local/share/coursier/bin" $path)
 path=("$HOME/.dotfiles/bin" $path)
 path=("$HOME/.dotfiles/lib" $path)
+path=("/opt/telegram" $path)
 export PATH
 
 export NVM_DIR="$HOME/.nvm"
@@ -13,5 +14,9 @@ export NVM_DIR="$HOME/.nvm"
 export DOT="$HOME/.dotfiles"
 export DOT_ZSH="$DOT/zsh"
 export EDITOR="nvim"
+
+
+export LD_LIBRARY_PATH="$DOT/lib"
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 

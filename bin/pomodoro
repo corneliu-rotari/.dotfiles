@@ -8,8 +8,8 @@ from pygame import mixer
 # figlet -f big -W "Name"
 
 seconds = 60
-work_time = 50
-small_break = 10
+work_time = 1
+small_break = 1
 big_break = 30
 
 alarm_path = '/mnt/c/Windows/Media/Alarm07.wav'
@@ -50,9 +50,9 @@ def music(playlist: str):
     os.system("spt play --name '" + playlist 
                 + "' --playlist --random > /dev/null")
         
-    inp = input("Start timer ? [Y/n] : ")
-    if (not assert_input(inp)):
-        sigint_uni()
+    # inp = input("Start timer ? [Y/n] : ")
+    # if (not assert_input(inp)):
+    #     sigint_uni()
     return
 
 

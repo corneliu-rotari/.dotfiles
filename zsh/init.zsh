@@ -4,7 +4,11 @@ export ZSH_THEME="lambda"
 export ZSH_THEME="fwalch"
 
 
-# ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOQUIT=false
+export ZSH_WEB_SEARCH_ENGINES=(
+  gist "https://gist.github.com/search?q="
+)
 zstyle ':omz:update' mode reminder # just remind me to update when it's time
 
 plugins=(
