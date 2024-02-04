@@ -25,7 +25,6 @@ source_if() {
 }
 
 source_if "$ZSH/oh-my-zsh.sh"
-source_if "$DOT_ZSH/plugins/init.zsh"
 source_if "$DOT_ZSH/exit.zsh"
 source_if "$HOME/.cargo/env"
 source_if "$HOME/.ghcup/env"
