@@ -15,6 +15,7 @@ plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
   zsh-vi-mode
+  personal
 )
 
 source_if() {

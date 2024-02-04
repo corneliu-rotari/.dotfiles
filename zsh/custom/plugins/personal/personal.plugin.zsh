@@ -1,4 +1,4 @@
-DOT_PLUG="$DOT_ZSH/plugins"
+DOT_PLUG="$DOT_ZSH/custom/plugins/personal"
 
 source "$DOT_PLUG/alias.zsh"
 source "$DOT_PLUG/check.zsh"

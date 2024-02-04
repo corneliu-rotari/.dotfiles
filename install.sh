@@ -2,7 +2,7 @@
 export DOT="$HOME/.dotfiles"
 export DOT_ZSH="$DOT/zsh"
 export PM="sudo apt"
-source "$DOT/zsh/plugins/init.zsh"
+source "$DOT/zsh/custom/plugins/personal/personal.plugin.zsh"
 
 # TODO Add install for ifuse 
 create_dirs() {
@@ -46,7 +46,7 @@ i_dep() {
 	$PM install -y zsh gdb binutils curl tmux gcc valgrind \
 		g++ make python3 python3-pip zip unzip \
 		python3-venv shellcheck software-properties-common \
-		bear figlet ripgrep hping3 wireshark nmap
+		bear figlet ripgrep hping3 wireshark
 
 	if which brave-browser &>/dev/null; then
 		sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -94,4 +94,4 @@ conf_nvm
 i_cargo
 post_install
 clear
-echo "Restart the system and"
+echo "Restart the computer"

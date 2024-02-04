@@ -13,6 +13,7 @@ alias apt="sudo /usr/bin/apt"
 alias vim="nvim"
 alias edit="vim ~/.dotfiles/"
 alias clear_vim_swap="rm -rf ~/.local/state/nvim/swap/*"
+alias cp="cp -v"
 
 # System
 alias off_note_display="xrandr --output eDP --off"
