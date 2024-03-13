@@ -19,8 +19,14 @@ up() {
 			nvm reinstall-packages "$vers"
 		fi
 		;;
+  "all")
+    up dot
+    up
+    up nvm
+    up zsh
+    ;;
 	*)
-		sudo apt-get update && sudo apt-get upgrade -y
+		sudo apt-get update && sudo apt-get upgrade -y && brew update
 		;;
 	esac
 }

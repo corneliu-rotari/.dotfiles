@@ -13,10 +13,9 @@ save() {
 		;;
   "tmux")
 		local res="$HOME/.local/share/tmux/resurrect"
-		\ls "$res" -I "last" -I "pane_contents.tar.gz" -I "save" -I "restore"
-    read "old_name?Choose the file to change : "
-    read "new_name?Choose the new name : "
-    mv "$res/$old_name"  "$res/$new_name"
+    local f=$(find ~/.local/share/tmux/resurrect -type f -name "*.txt" | fzf)
+    read "new_name?Choose name without extenstion: "
+    mv "$f" "$res/$new_name.txt"
     ;;
 	*)
 		echo "Unknown action required '$1'"

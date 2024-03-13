@@ -6,6 +6,7 @@ local ei = {
 			"clang-format",         -- C/C++
 			"stylua",               -- lua
 			"shfmt",                -- bash
+      "sqlfmt",               -- sql
 			"prettier",             -- md
 
       -- LSP
@@ -14,6 +15,7 @@ local ei = {
 			"marksman",             -- markdown
 			"pyright",              -- python
 			"bash-language-server", -- bash
+      "sqlls",                -- sql
 		},
 	},
 	treesitter = {
@@ -29,6 +31,7 @@ local ei = {
 			"bash",
 			"markdown",
 			"markdown_inline",
+      "sql",
 		},
 		highlight = {
 			enable = true,

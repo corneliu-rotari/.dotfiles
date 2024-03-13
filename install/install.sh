@@ -1,14 +1,13 @@
 #!/bin/bash
-export DOT="$HOME/.dotfiles"
+export DOT="$(dirname -- "$(realpath "$0")")"
 export DOT_ZSH="$DOT/zsh"
 export PM="sudo apt"
 source "$DOT/zsh/custom/plugins/personal/personal.plugin.zsh"
 
-# TODO Add install for ifuse 
 create_dirs() {
 	log "Directory and Links"
 
-	mkdir -p ~/.config ~/dev "$DOT/tmux/plugins"
+	mkdir -p ~/.config ~/dev 
 
 	ln_if "$DOT/zsh/init.zsh" ~/.zshrc
 	ln_if "$DOT/zsh/env.zsh" ~/.zshenv
@@ -26,7 +25,6 @@ i_cargo() {
 	log "Cargo"
 	curl https://sh.rustup.rs -sSf | sh
 	source "$HOME/.cargo/env"
-	cargo install exa
 	cargo install bob-nvim
 	bob install stable
 	bob use stable
@@ -46,7 +44,7 @@ i_dep() {
 	$PM install -y zsh gdb binutils curl tmux gcc valgrind \
 		g++ make python3 python3-pip zip unzip \
 		python3-venv shellcheck software-properties-common \
-		bear figlet ripgrep hping3 wireshark
+		bear figlet ripgrep hping3 wireshark exa
 
 	if which brave-browser &>/dev/null; then
 		sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg

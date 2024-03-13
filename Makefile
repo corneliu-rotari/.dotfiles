@@ -1,3 +1,6 @@
+build:
+	./install/main.sh
+
 test:
 	./test.sh
 
