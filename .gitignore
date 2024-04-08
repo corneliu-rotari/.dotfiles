@@ -1,3 +1,4 @@
 tmux/plugins
 **/.uuid
 ssh/id_*
+ssh/config

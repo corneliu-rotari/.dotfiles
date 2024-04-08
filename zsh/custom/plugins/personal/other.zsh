@@ -1,14 +1,3 @@
-ln_if() {
-	if [ -e "$2" ] || [ -L "$2" ]; then
-		echo "[Deleted] $2"
-		rm -rf "$2"
-	fi
-
-	ln -s "$1" "$2"
-	echo "[Created] Symbolic Link to $2"
-}
-
-
 tree() {
 	if [ $# -ne 1 ]; then
 		ls --tree --level=3

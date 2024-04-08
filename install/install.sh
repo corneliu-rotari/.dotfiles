@@ -9,16 +9,16 @@ create_dirs() {
 
 	mkdir -p ~/.config ~/dev 
 
-	ln_if "$DOT/zsh/init.zsh" ~/.zshrc
-	ln_if "$DOT/zsh/env.zsh" ~/.zshenv
-	ln_if "$DOT/ssh" ~/.ssh
-	ln_if "$DOT/fonts" ~/.fonts
-	ln_if "$DOT/modules/nvm" ~/.nvm
-	ln_if "$DOT/modules/nvim" ~/.config/nvim
-	ln_if "$DOT/nvim" "$DOT/modules/nvim/lua/custom"
-	ln_if "$DOT/i3" ~/.config/i3
-	ln_if "$DOT/tmux" ~/.config/tmux
-	ln_if "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
+	ln -sf "$DOT/zsh/init.zsh" ~/.zshrc
+	ln -sf "$DOT/zsh/env.zsh" ~/.zshenv
+	ln -sf "$DOT/ssh" ~/.ssh
+	ln -sf "$DOT/fonts" ~/.fonts
+	ln -sf "$DOT/modules/nvm" ~/.nvm
+	ln -sf "$DOT/modules/nvim" ~/.config/nvim
+	ln -sf "$DOT/nvim" "$DOT/modules/nvim/lua/custom"
+	ln -sf "$DOT/i3" ~/.config/i3
+	ln -sf "$DOT/tmux" ~/.config/tmux
+	ln -sf "$DOT/modules/tpm" "$DOT/tmux/plugins/tpm"
 }
 
 i_cargo() {
@@ -28,6 +28,12 @@ i_cargo() {
 	cargo install bob-nvim
 	bob install stable
 	bob use stable
+}
+
+i_brew() {
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew install fzf
+  brew install zoxide
 }
 
 i_dep() {
@@ -74,7 +80,7 @@ wsl_config() {
 	log "WSL"
 
 	$PM install -y wslu # WSL specific
-	ln_if "$(wslpath "$(wslvar USERPROFILE)")" ~/windows
+	ln -sf "$(wslpath "$(wslvar USERPROFILE)")" ~/windows
 }
 
 post_install() {
@@ -90,6 +96,7 @@ i_dep
 wsl_config
 conf_nvm
 i_cargo
+i_brew
 post_install
 clear
 echo "Restart the computer"

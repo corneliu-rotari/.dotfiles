@@ -16,6 +16,8 @@ plugins=(
 	zsh-syntax-highlighting
   zsh-vi-mode
   personal
+  zoxide
+  brew
 )
 
 source_if() {
