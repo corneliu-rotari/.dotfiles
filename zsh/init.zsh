@@ -33,3 +33,7 @@ source_if "$HOME/.ghcup/env"
 
 # trap 'exit_handler' EXIT 
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

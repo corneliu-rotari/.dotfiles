@@ -7,8 +7,10 @@ alias lll='ls -lah'
 alias k="clear"
 alias rr='sudo su -'
 alias func="functions | grep -a -G \"^[a-z].*()\""
+alias cd="z"
 alias cp="\cp -v"
 alias ln="\ln -v"
+alias rm="\rm -v"
 
 # Apps
 alias brave="brave-browser"
