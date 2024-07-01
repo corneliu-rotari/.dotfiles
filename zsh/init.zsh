@@ -16,6 +16,7 @@ plugins=(
 	zsh-syntax-highlighting
   zsh-vi-mode
   personal
+  subversion
   zoxide
   brew
 )
@@ -36,4 +37,6 @@ source_if "$HOME/.ghcup/env"
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+if npm list -g @angular/cli &>/dev/null; then
+  source <(ng completion script)
+fi
