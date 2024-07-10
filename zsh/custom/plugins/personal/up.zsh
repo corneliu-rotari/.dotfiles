@@ -26,7 +26,7 @@ up() {
     up zsh
     ;;
 	*)
-		sudo apt-get update && sudo apt-get upgrade -y && brew update
+		sudo apt-get update && sudo apt-get upgrade -y && brew update && brew upgrade
 		;;
 	esac
 }
