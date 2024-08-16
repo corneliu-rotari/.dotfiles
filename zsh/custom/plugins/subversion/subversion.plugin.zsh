@@ -1,4 +1,5 @@
 alias sst="svn status"
+alias sstq="svn status -q"
 alias sup="svn up"
 alias ssw="svn sw"
 alias si="svn info"

@@ -50,7 +50,7 @@ i_dep() {
 	$PM install -y zsh gdb binutils curl tmux gcc valgrind \
 		g++ make python3 python3-pip zip unzip \
 		python3-venv shellcheck software-properties-common \
-		bear figlet ripgrep hping3 wireshark exa
+		bear figlet ripgrep hping3 wireshark exa sshpass
 
 	if which brave-browser &>/dev/null; then
 		sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg

@@ -3,9 +3,6 @@ up() {
 	"dot")
 		cd ~/.dotfiles && git pull && cd - || return
 		;;
-	"zsh")
-		omz update
-		;;
 	"nvm")
 		export NVM_DIR="$HOME/.nvm"
 		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
@@ -23,10 +20,9 @@ up() {
     up dot
     up
     up nvm
-    up zsh
     ;;
 	*)
-		sudo apt-get update && sudo apt-get upgrade -y && brew update && brew upgrade
+		sudo apt-get update && sudo apt-get upgrade -y && brew update && brew upgrade && omz update
 		;;
 	esac
 }

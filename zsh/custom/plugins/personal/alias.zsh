@@ -5,12 +5,14 @@ alias l='ls'
 alias ll='ls -lh'
 alias lll='ls -lah'
 alias k="clear"
+alias kl="k && ll"
 alias rr='sudo su -'
 alias func="functions | grep -a -G \"^[a-z].*()\""
 alias cd="z"
 alias cp="\cp -v"
 alias ln="\ln -v"
 alias rm="\rm -v"
+alias c="cargo"
 
 # Apps
 alias brave="brave-browser"

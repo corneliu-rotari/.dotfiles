@@ -10,6 +10,7 @@ local sources = {
 	formatting.prettier,
 	formatting.black,
   formatting.sqlfmt,
+  formatting.rustfmt,
 
 	formatting.shfmt.with({
 		filetypes = { "sh", "zsh" },

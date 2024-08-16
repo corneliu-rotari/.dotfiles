@@ -16,11 +16,13 @@ local ei = {
 			"pyright",              -- python
 			"bash-language-server", -- bash
       "sqlls",                -- sql
+      "rust-analyzer"
 		},
 	},
 	treesitter = {
 		ensure_installed = {
 			"c",
+      "rust",
       "python",
       "haskell",
       "java",

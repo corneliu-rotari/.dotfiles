@@ -40,3 +40,5 @@ source_if "$HOME/.ghcup/env"
 if npm list -g @angular/cli &>/dev/null; then
   source <(ng completion script)
 fi
+
+source ~/.local_env
