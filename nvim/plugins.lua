@@ -57,6 +57,14 @@ local plugins = {
 		"nvim-treesitter/nvim-treesitter",
 		opts = ei.treesitter,
 	},
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      view = {
+        side = "right",
+      },
+    }
+  },
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
