@@ -170,6 +170,15 @@ local M = {
 		},
 	},
 
+	kraft = {
+		n = {
+			["<leader>kcr"] = { "<cmd>! cargo run<CR>", "Cargo run" },
+			["<leader>kcc"] = { "<cmd>! cargo check<CR>", "Cargo check" },
+			["<leader>kcb"] = { "<cmd>! cargo build<CR>", "Cargo build" },
+			["<leader>kct"] = { "<cmd>! cargo test<CR>", "Cargo test" },
+		},
+	},
+
 	config = {
 		n = {
 			["<leader>cmm"] = { "<cmd> Mason <CR>", "GUI" },

@@ -38,6 +38,7 @@ local plugins = {
 						n = { name = "NvChad" },
 						m = { name = "Mason" },
 					},
+					k = { name = "Kraft", c = { "Cargo" } },
 					t = { name = "Terminal" },
 					m = { name = "Marks" },
 					l = { name = "LSP" },
@@ -57,14 +58,14 @@ local plugins = {
 		"nvim-treesitter/nvim-treesitter",
 		opts = ei.treesitter,
 	},
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = {
-      view = {
-        side = "right",
-      },
-    }
-  },
+	{
+		"nvim-tree/nvim-tree.lua",
+		opts = {
+			view = {
+				side = "right",
+			},
+		},
+	},
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
