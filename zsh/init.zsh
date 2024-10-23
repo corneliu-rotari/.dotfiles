@@ -42,3 +42,4 @@ if npm list -g @angular/cli &>/dev/null; then
 fi
 
 source ~/.local_env
+export PATH=$PATH:/opt/xtensa/xtensa-esp32-elf/bin

@@ -18,3 +18,4 @@ export EDITOR="nvim"
 if [ -d /home/linuxbrew ]; then
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+. "$HOME/.cargo/env"

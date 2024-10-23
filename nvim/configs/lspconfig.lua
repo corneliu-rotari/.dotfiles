@@ -12,6 +12,16 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
+lspconfig.rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}
+
 lspconfig.clangd.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
