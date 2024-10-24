@@ -245,6 +245,7 @@ local M = {
 			["<leader>cc"] = "",
 			["<leader>q"] = "",
 			["<leader>ra"] = "",
+			["<leader>gt"] = "",
 		},
 		i = {
 			["<C-p>"] = "",
