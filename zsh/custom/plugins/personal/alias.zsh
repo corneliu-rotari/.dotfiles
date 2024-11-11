@@ -1,6 +1,6 @@
 # Terminal
 alias time="=time -p"
-alias ls="exa --icons --classify --oneline"
+alias ls="eza --icons --classify --oneline || \ls -rt"
 alias l='ls'
 alias ll='ls -lh'
 alias lll='ls -lah'
