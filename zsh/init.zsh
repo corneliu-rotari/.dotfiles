@@ -31,9 +31,7 @@ source_if "$ZSH/oh-my-zsh.sh"
 source_if "$DOT_ZSH/exit.zsh"
 source_if "$HOME/.cargo/env"
 source_if "$HOME/.ghcup/env"
-
-# trap 'exit_handler' EXIT 
-
+source_if "$HOME/.local_env"
 
 
 # Load Angular CLI autocompletion.
@@ -41,5 +39,4 @@ if npm list -g @angular/cli &>/dev/null; then
   source <(ng completion script)
 fi
 
-source ~/.local_env
 export PATH=$PATH:/opt/xtensa/xtensa-esp32-elf/bin

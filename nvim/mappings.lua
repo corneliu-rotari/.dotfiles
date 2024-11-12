@@ -160,7 +160,12 @@ local M = {
 				end,
 				"New horizontal term",
 			},
-
+			["<leader>tf"] = {
+				function()
+					require("nvterm.terminal").toggle("float")
+				end,
+				"New float term",
+			},
 			["<leader>tv"] = {
 				function()
 					require("nvterm.terminal").toggle("vertical")

@@ -5,6 +5,29 @@ local plugins = {
 		lazy = false,
 	},
 	{
+		"NvChad/nvterm",
+		opts = {
+			terminals = {
+				type_opts = {
+					float = {
+						relative = "editor",
+						row = 0.05,
+						col = 0.125,
+						width = 0.75,
+						height = 0.8,
+						border = "single",
+					},
+				},
+				behavior = {
+					autoclose_on_quit = {
+						enabled = true,
+						confirm = true,
+					},
+				},
+			},
+		},
+	},
+	{
 		"xiyaowong/transparent.nvim",
 		lazy = false,
 	},
