@@ -52,24 +52,19 @@ local plugins = {
 			require("which-key").setup(opts)
 
 			local wk = require("which-key")
-			wk.register({
-				["<leader>"] = {
-					name = "Leader",
-					f = { name = "File" },
-					c = {
-						name = "Config",
-						n = { name = "NvChad" },
-						m = { name = "Mason" },
-					},
-					k = { name = "Kraft", c = { "Cargo" } },
-					t = { name = "Terminal" },
-					m = { name = "Marks" },
-					l = { name = "LSP" },
-					g = { name = "Git" },
-					j = { name = "Jump" },
-					b = { name = "Buffer" },
-					w = { name = "Workspace" },
-				},
+			wk.add({
+        { "<leader>f", group = "File"},
+        { "<leader>c", group = "Config"},
+        { "<leader>cm", group = "Mason"},
+        { "<leader>k", group = "Kraft"},
+        { "<leader>kc", group = "Cargo"},
+        { "<leader>t", group = "Terminal"},
+        { "<leader>m", group = "Marks"},
+        { "<leader>l", group = "LSP"},
+        { "<leader>g", group = "Git"},
+        { "<leader>j", group = "Jump"},
+        { "<leader>b", group = "Buffer"},
+        { "<leader>w", group = "Workspace"},
 			})
 		end,
 	},

@@ -229,6 +229,7 @@ local M = {
 			["<leader>e"] = "",
 			["<leader>ma"] = "",
 			["<leader>fz"] = "",
+			["<leader>fm"] = "",
 			["<leader>n"] = "",
 			["<leader>h"] = "",
 			["<leader>v"] = "",
