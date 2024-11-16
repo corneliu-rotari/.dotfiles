@@ -16,6 +16,3 @@
 [submodule "modules/tpm"]
 	path = modules/tpm
 	url = https://github.com/tmux-plugins/tpm.git
-[submodule "zsh/custom/plugins/zsh-vi-mode"]
-	path = zsh/custom/plugins/zsh-vi-mode
-	url = https://github.com/jeffreytse/zsh-vi-mode.git
