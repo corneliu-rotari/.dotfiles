@@ -10,7 +10,6 @@ zstyle ':omz:update' mode reminder # just remind me to update when it's time
 
 plugins=(
 	git
-  autoupdate
   web-search
   tmux
   zoxide
