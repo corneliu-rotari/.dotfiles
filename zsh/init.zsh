@@ -10,15 +10,16 @@ zstyle ':omz:update' mode reminder # just remind me to update when it's time
 
 plugins=(
 	git
+  autoupdate
   web-search
   tmux
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-  zsh-vi-mode
-  personal
-  subversion
   zoxide
   brew
+	zsh-syntax-highlighting
+	zsh-autosuggestions
+  fzf
+  personal
+  subversion
 )
 
 source_if() {

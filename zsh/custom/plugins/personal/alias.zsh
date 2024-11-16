@@ -13,6 +13,7 @@ alias cp="\cp -v"
 alias ln="\ln -v"
 alias rm="\rm -v"
 alias c="cargo"
+alias open="open_command"
 
 # Apps
 alias brave="brave-browser"

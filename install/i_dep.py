@@ -53,6 +53,7 @@ mandatory = [
     "python3-venv", "shellcheck", "software-properties-common",
     "ripgrep", "hping3"
 ]
+# install wslu for wsl
 
 # Install mandatory and optional packages
 install_packages(mandatory, confirm_en=False)
