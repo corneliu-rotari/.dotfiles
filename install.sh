@@ -4,22 +4,22 @@ export DOT_ZSH="$DOT/zsh"
 source "$DOT/zsh/custom/plugins/personal/personal.plugin.zsh"
 
 conf_nvm() {
-	up nvm
+  up nvm
 }
 
 wsl_config() {
-	if ! check wsl; then
-		return
-	fi
-	log "WSL"
+  if ! check wsl; then
+    return
+  fi
+  log "WSL"
 
-	$PM install -y wslu # WSL specific
-	ln -sf "$(wslpath "$(wslvar USERPROFILE)")" ~/windows
+  $PM install -y wslu # WSL specific
+  ln -sf "$(wslpath "$(wslvar USERPROFILE)")" ~/windows
 }
 
 post_install() {
   ssh-keygen
-	~/.config/tmux/plugins/tpm/bin/install_plugins
+  ~/.config/tmux/plugins/tpm/bin/install_plugins
 }
 
 confirm() {

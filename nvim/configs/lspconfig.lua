@@ -6,10 +6,10 @@ local lspconfig = require("lspconfig")
 local servers = { "bashls", "rust_analyzer", "marksman", "pyright", "sqlls" }
 
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-	})
+  lspconfig[lsp].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
 end
 
 lspconfig.rust_analyzer.setup{
@@ -23,10 +23,10 @@ lspconfig.rust_analyzer.setup{
 }
 
 lspconfig.clangd.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	cmd = {
-		"clangd",
-		"--offset-encoding=utf-16",
-	},
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
 })
