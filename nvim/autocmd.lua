@@ -3,6 +3,9 @@ local autocmd = vim.api.nvim_create_autocmd
 autocmd({ "VimEnter" }, {
 	callback = function(ev)
 		if ev.file:match("(.*/)(.*)") ~= nil then
+      if ev.file:match("man:") then
+        return
+      end
 			if vim.fn.isdirectory(ev.file) == 1 then
 				vim.cmd.cd(ev.file)
 				require("nvim-tree.api").tree.open()
