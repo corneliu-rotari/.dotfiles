@@ -1,9 +1,9 @@
 # Terminal
 alias time="=time -p"
 alias ls="eza --icons=always --classify=always --oneline"
-alias l="eza --icons=always --classify=always --oneline"
-alias ll='eza --icons=always --classify=always --oneline -lh '
-alias lll='eza --icons=always --classify=always --oneline -lah '
+alias l="ls"
+alias ll='l -lh'
+alias lll='ll -a'
 alias k="clear"
 alias kl="k && ll"
 alias rr='sudo su -'

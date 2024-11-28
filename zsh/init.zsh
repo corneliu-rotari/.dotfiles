@@ -12,6 +12,7 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
 
+  archlinux
   git
   web-search
   tmux
