@@ -2,7 +2,7 @@
 	path = modules/nvm
 	url = https://github.com/nvm-sh/nvm.git
 [submodule "modules/nvim"]
-	path = modules/nvim
+	path = .config/nvim
 	url = https://github.com/NvChad/NvChad
 [submodule "modules/oh-my-zsh"]
 	path = modules/oh-my-zsh
@@ -14,5 +14,5 @@
 	path = zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "modules/tpm"]
-	path = modules/tpm
+	path = .config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
