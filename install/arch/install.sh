@@ -1,3 +1,8 @@
 #!/bin/sh
 
-packages=(base linux linux-firmware grub efibootmgr)
+packages=(`cat packages.txt`)
+
+
+for package in "${packages[@]}"; do
+    echo "Installing $package"
+done

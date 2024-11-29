@@ -17,3 +17,20 @@ log() {
 		;;
 	esac
 }
+
+y() {
+  case "$1" in
+    "-S")
+      sed -i "/\b\($2\)\b/d" ~/.dotfiles/install/arch/packages.txt
+      echo "$2" >> ~/.dotfiles/install/arch/packages.txt
+      yay $@
+      ;;
+    "-R")
+      sed -i "/\b\($2\)\b/d" ~/.dotfiles/install/arch/packages.txt
+      yay $@
+      ;;
+    *)
+      echo $@
+      ;;
+  esac
+}
