@@ -1,0 +1,120 @@
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"clock",
+	],
+	"modules-right": [
+        "custom/packages",
+		"cpu",
+		"memory",
+		"disk",
+    "network#wifi",
+    "battery",
+    "pulseaudio",
+		"tray",
+    "custom/notification"
+	],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": " ",
+            "active": " ",
+            "urgent": " "
+            /* "default": "", */
+            /* "active": "", */
+            /* "urgent": "" */
+	    },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+	"clock": {
+		"interval": 5,
+    "format": " {:%a %d.%m.%Y    %H:%M}",
+		"tooltip": false
+	},
+	"hyprland/window": {
+		"max-length": 60,
+		"separate-outputs": false
+	},
+	"memory": {
+		"interval": 5,
+		"format": " {}%"
+	},
+	"cpu": {
+		"interval": 1,
+		"format": " {usage:2}%",
+        "tooltip": false
+	},
+    "disk": {
+        "format": "  {percentage_used}%",
+    },
+	"custom/packages": {
+		"exec": "~/.local/bin/packagecount",
+		"format": " {}",
+		"interval": 45
+	},
+    "network#wifi": {
+        "interval": 1,
+        "interface": "wlp4s0",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-disconnected": "󰤮",
+    },
+	"tray": {
+		//"icon-size": 24,
+		"spacing": 12
+	},
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "muted": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon} {}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "interval": 2,
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-full": "󱘖 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-click": "",
+    }
+}
