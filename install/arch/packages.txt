@@ -31,3 +31,5 @@ tcpdump
 zathura
 zathura-pdf-mupdf
 htop
+brightnessctl
+man-pages
