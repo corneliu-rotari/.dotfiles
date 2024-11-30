@@ -1,10 +1,13 @@
 typeset -U path PATH
 path=("$HOME/.local/bin" $path)
-path=("$HOME/.local/share/bob/nvim-bin" $path)
-path=("$HOME/.local/share/coursier/bin" $path)
+# path=("$HOME/.local/share/bob/nvim-bin" $path)
+# path=("$HOME/.local/share/coursier/bin" $path)
 path=("$HOME/.dotfiles/bin" $path)
 path=("$HOME/.dotfiles/lib" $path)
 path=("/opt/telegram" $path)
+path=("/opt/brave-bin" $path)
+path=("/opt/xtensa/xtensa-esp32-elf/bin" $path)
+
 export PATH
 
 export NVM_DIR="$HOME/.nvm"

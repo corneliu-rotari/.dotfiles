@@ -40,5 +40,3 @@ source_if "$HOME/.local_env"
 if npm list -g @angular/cli &>/dev/null; then
   source <(ng completion script)
 fi
-
-export PATH=$PATH:/opt/xtensa/xtensa-esp32-elf/bin
