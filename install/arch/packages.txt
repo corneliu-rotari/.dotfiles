@@ -33,3 +33,6 @@ zathura-pdf-mupdf
 htop
 brightnessctl
 man-pages
+wlogout
+wlr-randr
+shellcheck
