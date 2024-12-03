@@ -95,6 +95,14 @@ local plugins = {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+  {
+    "jim-at-jibba/micropython.nvim",
+    dependencies = { "akinsho/toggleterm.nvim", "stevearc/dressing.nvim" },
+    ft = { "python" }
+    -- config = function()
+    --   require("micropython.nvim").initialise()
+    -- end
+  },
 }
 
 return plugins

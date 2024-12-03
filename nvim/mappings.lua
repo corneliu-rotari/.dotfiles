@@ -278,5 +278,11 @@ local M = {
 			["<Right>"] = { ":noh <CR>", "Clear highlights" },
 		},
 	},
+  micropython = {
+    n = {
+      ["<leader>mr"] = {function() require("micropython_nvim").run() end, "MP Run"},
+      ["<leader>mi"] = {function() require("micropython_nvim").init() end, "MP Init"},
+      },
+  },
 }
 return M
