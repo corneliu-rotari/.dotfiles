@@ -12,6 +12,7 @@ alias cd="z"
 alias cp="\cp -v"
 alias ln="\ln -v"
 alias rm="\rm -v"
+alias mv="\mv -v"
 alias c="cargo"
 alias open="open_command"
 

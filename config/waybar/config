@@ -116,5 +116,16 @@
         "format-full": "󱘖 {capacity}%",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "on-click": "",
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-actions": {
+            "poweroff": "poweroff",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
     }
 }
