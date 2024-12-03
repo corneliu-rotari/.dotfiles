@@ -21,3 +21,10 @@ if [[ -n $XDG_CONFIG_HOME ]]; then
     ln -sf "$link" "$XDG_CONFIG_HOME/$(basename "$link")" 
   done
 fi
+
+grps=("wireshark" "kvm" "input" "wheel" "libvirt" "uucp")
+for grp in "${grps[@]}"; do
+    printf "%-70s [OK]\n" "Adding $USER to $grp"
+    sudo usermod -a -G "$grp" "$USER"
+done
+

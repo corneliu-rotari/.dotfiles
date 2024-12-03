@@ -36,3 +36,10 @@ man-pages
 wlogout
 wlr-randr
 shellcheck
+keychain
+python-pip
+qemu-full
+libvirt
+python-dotenv
+python-virtualenv
+python-pipenv
