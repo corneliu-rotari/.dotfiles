@@ -1,6 +1,6 @@
 typeset -U path PATH
 path=("$HOME/.local/bin" $path)
-# path=("$HOME/.local/share/bob/nvim-bin" $path)
+path=("$HOME/.local/share/bob/nvim-bin" $path)
 # path=("$HOME/.local/share/coursier/bin" $path)
 path=("$HOME/.dotfiles/bin" $path)
 path=("$HOME/.dotfiles/lib" $path)
@@ -19,6 +19,7 @@ export DOT="$HOME/.dotfiles"
 export DOT_ZSH="$DOT/zsh"
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
+export PUML_PATH=$HOME/.plantuml
 
 if [ -d /home/linuxbrew ]; then
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

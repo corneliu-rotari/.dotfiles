@@ -30,7 +30,27 @@ up() {
       bob erase && bob use stable
     ;;
 	*)
-		sudo apt-get update && sudo apt-get upgrade -y && brew update && brew upgrade && omz update
+    if [[ -f /etc/os-release ]]; then
+        . /etc/os-release
+        case "$ID" in
+          ubuntu|debian)
+            sudo apt update && sudo apt upgrade -y && brew update && brew upgrade 
+            ;;
+          arch)
+            if command -v yay >/dev/null 2>&1; then
+              yay -Syu
+            else
+              sudo pacman -Syu
+            fi
+            ;;
+          *)
+            return 1
+            ;;
+        esac
+      else
+        return 1
+      fi
+    omz update
 		;;
 	esac
 }
