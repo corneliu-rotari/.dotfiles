@@ -24,7 +24,6 @@ up() {
 		fi
 		;;
   "all")
-    up dot && \
       up && \
       up nvm && \
       bob erase && bob use stable
@@ -51,6 +50,7 @@ up() {
         return 1
       fi
     omz update
+    up dot
 		;;
 	esac
 }
