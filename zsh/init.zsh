@@ -40,3 +40,8 @@ source_if "$HOME/.local_env"
 if npm list -g @angular/cli &>/dev/null; then
   source <(ng completion script)
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/cornel/.lmstudio/bin"
+# End of LM Studio CLI section
+

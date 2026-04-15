@@ -3,19 +3,21 @@
 	"position": "top",
 
 	"modules-left": [
-		"hyprland/workspaces"
+    "wlr/taskbar"
 	],
 	"modules-center": [
-		"clock",
-	],
-	"modules-right": [
-        "custom/packages",
 		"cpu",
 		"memory",
 		"disk",
+		"clock",
     "network#wifi",
     "battery",
     "pulseaudio",
+
+	],
+	"modules-right": [
+    "custom/packages",
+		"hyprland/workspaces",
 		"tray",
     "custom/notification"
 	],
@@ -35,7 +37,16 @@
 	"clock": {
 		"interval": 5,
     "format": " {:%a %d.%m.%Y    %H:%M}",
-		"tooltip": false
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+          "months": "<span color='#ff6699'><b>{}</b></span>",
+          "days": "<span color='#cdd6f4'><b>{}</b></span>",
+          "weekdays": "<span color='#7CD37C'><b>{}</b></span>",
+          "today": "<span color='#ffcc66'><b>{}</b></span>"
+        }
+      }
 	},
 	"hyprland/window": {
 		"max-length": 60,
@@ -64,6 +75,7 @@
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
         "format-wifi": "{icon} {signalStrength}%",
         "format-disconnected": "󰤮",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>",
     },
 	"tray": {
 		//"icon-size": 24,
@@ -127,5 +139,13 @@
             "suspend": "systemctl suspend",
             "hibernate": "systemctl hibernate"
         }
-    }
+    },
+    "wlr/taskbar": {
+        	"format": "{icon}",
+        	"tooltip": true,
+        	"tooltip-format": "{title}",
+        	"on-click": "activate",
+        	"on-click-middle": "close",
+        	"active-first": true
+   	 }
 }

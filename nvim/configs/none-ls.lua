@@ -17,9 +17,6 @@ local sources = {
 	}),
 	formatting.stylua,
 	formatting.clang_format,
-	lint.shellcheck.with({
-		filetypes = { "sh", "zsh" },
-	}),
 }
 
 null_ls.setup({

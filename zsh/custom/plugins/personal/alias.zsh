@@ -4,6 +4,7 @@ alias ls="eza --icons=always --classify=always --oneline"
 alias l="ls"
 alias ll='l -lh'
 alias lll='ll -a'
+alias llll='lll -snew'
 alias k="clear"
 alias kl="k && ll"
 alias rr='sudo su -'
