@@ -29,3 +29,6 @@ Run the next commands
 ### Extra
 
 - `i3` - Install from the i3 site for better support on Ubuntu (#https://i3wm.org/docs/repositories.html)
+
+### TMUX
+After symlink enter tmux and `Ctrl+b I` to install the plugins

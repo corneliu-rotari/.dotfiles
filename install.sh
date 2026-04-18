@@ -23,14 +23,14 @@ mkdir -p ~/.config ~/dev
 : "${XDG_CONFIG_HOME:=$HOME/.config}"
 
 if confirm "Create sym links" ; then
-  ln -sf "$DOT/zsh/init.zsh" ~/.zshrc
-  ln -sf "$DOT/zsh/env.zsh" ~/.zshenv
-  ln -sf "$DOT/fonts" ~/.fonts
-  ln -sf "$DOT/modules/nvm" ~/.nvm
+  ln -sfn "$DOT/zsh/init.zsh" $HOME/.zshrc
+  ln -sfn "$DOT/zsh/env.zsh" $HOME/.zshenv
+  ln -sfn "$DOT/fonts" $HOME/.fonts
+  ln -sfn "$DOT/modules/nvm" $HOME/.nvm
 
   # Create sym links for XDG_CONFIG_HOME
   for link in "$DOT/config"/*; do
-    ln -sf "$link" "$XDG_CONFIG_HOME/$(basename "$link")" 
+    ln -sfn "$link" "$XDG_CONFIG_HOME/$(basename "$link")" 
   done
 fi
 

@@ -1,9 +1,12 @@
+[submodule "config/nvim"]
+	path = config/nvim
+	url = https://github.com/NvChad/NvChad
+[submodule "config/tmux/plugins/tpm"]
+	path = config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
 [submodule "modules/nvm"]
 	path = modules/nvm
 	url = https://github.com/nvm-sh/nvm.git
-[submodule "modules/nvim"]
-	path = config/nvim
-	url = https://github.com/NvChad/NvChad
 [submodule "modules/oh-my-zsh"]
 	path = modules/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh
@@ -13,6 +16,3 @@
 [submodule "zsh/custom/plugins/zsh-autosuggestions"]
 	path = zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "modules/tpm"]
-	path = config/tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm.git
