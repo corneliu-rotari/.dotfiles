@@ -22,7 +22,7 @@ up "system"
 mkdir -p ~/.config ~/dev
 : "${XDG_CONFIG_HOME:=$HOME/.config}"
 
-if confirm "Create sym links" ; then
+if confirm "Create sym links"; then
   ln -sfn "$DOT/zsh/init.zsh" $HOME/.zshrc
   ln -sfn "$DOT/zsh/env.zsh" $HOME/.zshenv
   ln -sfn "$DOT/fonts" $HOME/.fonts
@@ -30,49 +30,49 @@ if confirm "Create sym links" ; then
 
   # Create sym links for XDG_CONFIG_HOME
   for link in "$DOT/config"/*; do
-    ln -sfn "$link" "$XDG_CONFIG_HOME/$(basename "$link")" 
+    ln -sfn "$link" "$XDG_CONFIG_HOME/$(basename "$link")"
   done
 fi
 
 . /etc/os-release
 
 case "$ID" in
-  debian)
-    FILES="debian.txt"
-    BREW="brew.txt"
-    ;;
-    
-  ubuntu)
-    FILES="debian.txt ubuntu.txt"
-    BREW="brew.txt"
-    ;;
+debian)
+  FILES="debian.txt"
+  BREW="brew.txt"
+  ;;
 
-  fedora)
-    PM="dnf"
-    FILES="fedora.txt"
-    ;;
+ubuntu)
+  FILES="debian.txt ubuntu.txt"
+  BREW="brew.txt"
+  ;;
 
-  arch)
-    PM="pacman"
-    ARGS="-S --noconfirm"
-    FILES="arch.txt"
-    ;;
+fedora)
+  PM="dnf"
+  FILES="fedora.txt"
+  ;;
 
-  *)
-    echo "Unsupported distro: $ID" >&2
-    exit 1
-    ;;
+arch)
+  PM="pacman"
+  ARGS="-S --noconfirm"
+  FILES="arch.txt"
+  ;;
+
+*)
+  echo "Unsupported distro: $ID" >&2
+  exit 1
+  ;;
 esac
 
-FILES=`printf "${DOT}/install/%s " $FILES`
+FILES=$(printf "${DOT}/install/%s " $FILES)
 
 # Install pkg
 if confirm "Install packages"; then
   for fl in $FILES; do
-    for package in `cat $fl`; do
-        STATUS="FAILED"
-        sudo $PM $ARGS $package > /dev/null && STATUS="OK"
-        prt "Installing $package" "$STATUS"
+    for package in $(cat $fl); do
+      STATUS="FAILED"
+      sudo $PM $ARGS $package >/dev/null && STATUS="OK"
+      prt "Installing $package" "$STATUS"
     done
   done
 fi
@@ -93,10 +93,10 @@ if [ -n "$BREW" ] && confirm "Install Brew"; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-  BREW=`printf "${DOT}/install/%s " $BREW`
-  for pkg in `cat $BREW`; do
+  BREW=$(printf "${DOT}/install/%s " $BREW)
+  for pkg in $(cat $BREW); do
     STATUS="FAILED"
-    brew install "$pkg" > /dev/null && STATUS="OK"
+    brew install "$pkg" >/dev/null && STATUS="OK"
     prt "Installing $package" "$STATUS"
   done
 fi
@@ -113,7 +113,6 @@ if confirm "Install Brave"; then
   curl -fsS https://dl.brave.com/install.sh | sh
 fi
 
-
 # Install brave-browser
 if confirm "Install Docker"; then
   curl -fsSL https://get.docker.com | sh
@@ -123,9 +122,9 @@ fi
 if confirm "Add to Groups"; then
   grps=("wireshark" "kvm" "input" "wheel" "libvirt" "uucp" "docker")
   for grp in "${grps[@]}"; do
-      STATUS="FAILED"
-      sudo usermod -aG "$grp" "$USER" && STATUS="OK"
-      prt "Adding to $grp" "$STATUS"
+    STATUS="FAILED"
+    sudo usermod -aG "$grp" "$USER" && STATUS="OK"
+    prt "Adding to $grp" "$STATUS"
   done
 fi
 
