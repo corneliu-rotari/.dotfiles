@@ -28,12 +28,18 @@ up() {
       up nvm && \
       bob erase && bob use stable
     ;;
-	*)
-    if [[ -f /etc/os-release ]]; then
+  "brew")
+      if command -v brew >/dev/null 2>&1; then
+        brew update && brew upgrade && brew cleanup
+      fi
+    ;;
+  "system")
+      if [[ -f /etc/os-release ]]; then
         . /etc/os-release
         case "$ID" in
           ubuntu|debian)
-            sudo apt update && sudo apt upgrade -y && brew update && brew upgrade 
+            sudo apt-get update && sudo apt-get upgrade -y 
+            up brew
             ;;
           arch)
             if command -v yay >/dev/null 2>&1; then
@@ -42,13 +48,17 @@ up() {
               sudo pacman -Syu
             fi
             ;;
+          fedora)
+            sudo dnf update -y
+            ;;
           *)
             return 1
             ;;
         esac
-      else
-        return 1
       fi
+    ;;
+	*)
+    up system
     omz update
     up dot
 		;;

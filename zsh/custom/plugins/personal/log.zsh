@@ -18,7 +18,7 @@ log() {
 	esac
 }
 
-y() {
+save_yay() {
   case "$1" in
     "-S")
       sed -i "/\b\($2\)\b/d" ~/.dotfiles/install/arch/packages.txt

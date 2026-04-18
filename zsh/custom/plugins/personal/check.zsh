@@ -24,3 +24,21 @@ check() {
 		;;
 	esac
 }
+
+confirm() {
+  FMT="%-80s"
+  printf "$FMT[Y/n]" "$1"
+  read resp
+  if [ -z "$resp" ]; then
+      response_lc="y" # empty is Yes
+  else
+      response_lc=$(echo "$resp" | tr '[:upper:]' '[:lower:]') # case insensitive
+  fi
+
+  [ "$response_lc" = "y" ]
+}
+
+prt() {
+  FMT="%-80s"
+  printf "$FMT [$2]" "$1"
+}

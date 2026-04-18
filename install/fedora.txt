@@ -1,0 +1,35 @@
+curl
+vim
+git
+g++
+gcc
+gdb
+binutils
+iptables
+hping3
+htop
+make
+valgrind
+wget
+zip
+zsh
+ripgrep
+unzip
+tcpdump
+python3
+python3-pip
+python3-dotenv
+python3-virtualenv
+esptool
+mosquitto
+openmpi openmpi-devel
+openssh-server
+pandoc
+qemu-kvm libvirt virt-install virt-manager virt-viewer
+shellcheck
+texlive
+time
+usbutils
+wireshark
+xclip
+zathura

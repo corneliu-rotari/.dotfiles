@@ -24,9 +24,6 @@ openssh
 zip
 unzip
 ripgrep
-fzf
-zoxide
-tmux
 tcpdump
 zathura
 zathura-pdf-mupdf
