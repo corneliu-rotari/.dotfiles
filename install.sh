@@ -132,6 +132,13 @@ if confirm "Install node"; then
   up nvm
 fi
 
+# Create sym links for systemd daemons
+if confirm "Add custom daemons"; then
+  for link in "$DOT/daemon"/**/*.service; do
+    sudo ln -sn "$link" "/etc/systemd/system/$(basename "$link")"
+  done
+fi
+
 #Cleanup
 rm -rf "$HOME/.bash*"
 $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/install_plugins

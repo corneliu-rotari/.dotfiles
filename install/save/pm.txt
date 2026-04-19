@@ -1,0 +1,35 @@
+binutils
+brave-browser
+curl
+docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+esptool
+g++
+gcc
+gdb
+git
+hping3
+htop
+iptables
+libopenmpi-dev
+make
+mosquitto
+openmpi-bin
+openssh-server
+pandoc
+pipenv
+python3-dotenv
+python3-pip
+python3-venv
+qemu-system
+ripgrep
+shellcheck
+tcpdump
+texlive
+time
+valgrind
+vim tmux
+wireshark
+xclip
+zathura
+zip
+zsh

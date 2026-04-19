@@ -1,0 +1,11 @@
+[Unit]
+Description=Save package list before shutdown
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/cornel/.dotfiles/daemon/save.d/save-pkgs.sh
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target

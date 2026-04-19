@@ -1,0 +1,7 @@
+eza
+fd
+fzf
+lazygit
+neovim
+tmux
+zoxide

@@ -4,3 +4,4 @@ eza
 tmux
 neovim
 lazygit
+fd
