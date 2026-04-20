@@ -1,0 +1,29 @@
+unbind r
+bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
+
+set-option -sa terminal-overrides ",xterm*:Tc"
+set -sg escape-time 1
+set -g status-position top
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'catppuccin/tmux#v2.0.0'
+
+set -g @catppuccin_flavour 'mocha'
+set -g @catppuccin_window_status_style 'rounded'
+set -qgq @catppuccin_window_text " #W"
+set -ogq @catppuccin_window_current_text " #W"
+
+set -g status-right-length 100
+set -g status-right "#{E:@catppuccin_status_directory}#{E:@catppuccin_status_application}#{E:@catppuccin_status_session}"
+set -g status-left ""
+
+set -g @resurrect-strategy-nvim 'session'
+set -g @resurrect-processes 'ssh docker'
+
+ # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+ run '~/.config/tmux/plugins/tpm/tpm'
+

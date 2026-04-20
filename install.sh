@@ -19,7 +19,9 @@ BREW=""
 # ---------------- Start ---------------------
 up "system"
 
-mkdir -p ~/.config ~/dev
+# Create structure
+mkdir -p "$HOME/"{.config,dev}
+touch "$HOME"/.local_env.zsh
 : "${XDG_CONFIG_HOME:=$HOME/.config}"
 
 if confirm "Create sym links"; then
