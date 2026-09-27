@@ -8,6 +8,7 @@ path=("$HOME/.dotfiles/scripts" $path)
 path=("/opt/telegram" $path)
 path=("/opt/brave-bin" $path)
 path=("/opt/xtensa/xtensa-esp32-elf/bin" $path)
+path=("/usr/local/go/bin" $path)
 
 export PATH
 

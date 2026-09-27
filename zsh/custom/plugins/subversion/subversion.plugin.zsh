@@ -3,6 +3,7 @@ alias sstq="svn status -q"
 alias sup="svn up"
 alias ssw="svn sw"
 alias si="svn info"
+alias srr="svn revert -R ."
 alias srmu="svn cleanup --remove-unversioned"
 
 svn_all() {
